@@ -16,6 +16,8 @@ npm run check    # typecheck + lint
 npm run build && npm start
 ```
 
+`npm run dev` auto-detects WebContainer environments (StackBlitz, Bolt.new) and applies the async-context mitigation required by Next.js 15.5.x there — see [STACKBLITZ.md](STACKBLITZ.md). Ordinary machines run plain `next dev` with no changes.
+
 ## StackBlitz preview
 
 [Open the updated source branch in StackBlitz](https://stackblitz.com/github/milpardi42-max/rozalit/tree/arena/01a0e3c7-rozalit)

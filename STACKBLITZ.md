@@ -9,9 +9,14 @@
 
 The ESLint deprecation and experimental WASI messages are not this exception. Reinstalling dependencies or clearing a build cache alone is not a demonstrated fix for this runtime incompatibility. The error message alone does not prove which scheduler or module lost the context.
 
-## Opt-in mitigation in this project (not a guaranteed upstream fix)
+## Mitigation in this project (not a guaranteed upstream fix)
 
-`npm run dev:stackblitz` starts Node with a preload **before Next is imported**, inherited by its child processes. The preload binds callbacks scheduled through `queueMicrotask`, `setImmediate` and `setTimeout` to their scheduling async context, using `node:async_hooks`'s `AsyncResource.bind`.
+`npm run dev` goes through a small launcher (`scripts/stackblitz/dev.mjs`) that picks the mode automatically:
+
+- **Plain mode** (ordinary machines): runs `next dev` exactly as before — no probes, no env changes.
+- **Mitigation mode** (WebContainers, e.g. StackBlitz/Bolt.new): detected via `process.versions.webcontainer`, the `@blitz/internal/env` module, `WEBCONTAINER=1`, or a `/home/projects/` working directory. It first runs the async-context probes, then starts Next with a preload **before Next is imported**, inherited by its child processes. The preload binds callbacks scheduled through `queueMicrotask`, `setImmediate` and `setTimeout` to their scheduling async context, using `node:async_hooks`'s `AsyncResource.bind`.
+
+Overrides (documented in `scripts/stackblitz/mode.mjs`): `ROSIE_STACKBLITZ=1` or `npm run dev:stackblitz` force mitigation mode anywhere; `ROSIE_STACKBLITZ=0` forces plain mode. The `stackblitz` field in `package.json` sets `ROSIE_STACKBLITZ=1` for StackBlitz top-level shells, so a plain import already takes the safe path.
 
 This targets callback context loss. It does **not** fix every possible WebContainer AsyncLocalStorage implementation issue or duplicate Next module instance. It never invents a store, catches/ignores Next's invariant, shares a global user's request, changes authentication, or downgrades Next/React to an older vulnerable release.
 

@@ -5,6 +5,7 @@ import { createRequire } from "node:module";
 import { spawnSync } from "node:child_process";
 import { promisify } from "node:util";
 import { diagnose } from "../scripts/stackblitz/diagnose.mjs";
+import { resolveDevMode, isWebContainerRuntime } from "../scripts/stackblitz/mode.mjs";
 
 const require = createRequire(import.meta.url);
 const { bindScheduler, install } = require("../scripts/stackblitz/async-context.cjs");
@@ -57,4 +58,30 @@ test("preload is inherited by forked processes through NODE_OPTIONS", () => {
   const preload = require.resolve("../scripts/stackblitz/async-context.cjs");
   const result = spawnSync(process.execPath, ["-e", `if(!globalThis[Symbol.for('rosie.stackblitz.async-context')]) process.exit(1)`], { env: { ...process.env, NODE_ENV: "development", ROSIE_STACKBLITZ: "1", NODE_OPTIONS: `--require ${JSON.stringify(preload)}` } });
   assert.equal(result.status, 0, result.stderr.toString());
+});
+
+test("dev mode decision: ordinary node stays plain, webcontainer signals trigger mitigation", () => {
+  const empty = { ...process.env, ROSIE_STACKBLITZ: "" };
+  delete empty.WEBCONTAINER;
+
+  // Ordinary machine: no signal → plain (unchanged behaviour)
+  assert.equal(resolveDevMode({ env: empty, cwd: "/home/user/project" }).mode, "plain");
+  assert.equal(resolveDevMode({ env: empty, versions: {}, cwd: "/home/user/project" }).mode, "plain");
+
+  // WebContainer signals (any one) → mitigate
+  assert.equal(resolveDevMode({ env: empty, versions: { webcontainer: "1" }, cwd: "/app" }).mode, "mitigate");
+  assert.equal(resolveDevMode({ env: { ...empty, WEBCONTAINER: "1" }, cwd: "/app" }).mode, "mitigate");
+  assert.equal(resolveDevMode({ env: empty, cwd: "/home/projects/llqimvqnxv.github" }).mode, "mitigate");
+
+  // Explicit overrides always win
+  assert.equal(resolveDevMode({ env: { ...empty, ROSIE_STACKBLITZ: "1" }, cwd: "/home/user/project" }).mode, "mitigate");
+  assert.equal(resolveDevMode({ force: true, env: empty, cwd: "/home/user/project" }).mode, "mitigate");
+  assert.equal(resolveDevMode({ env: { ...empty, ROSIE_STACKBLITZ: "0" }, versions: { webcontainer: "1" } }).mode, "plain");
+});
+
+test("isWebContainerRuntime accepts the injected versions field and rejects ordinary runtimes", () => {
+  assert.equal(isWebContainerRuntime({}, { webcontainer: "0.1" }, "/app"), true);
+  assert.equal(isWebContainerRuntime({ WEBCONTAINER: "1" }, {}, "/app"), true);
+  assert.equal(isWebContainerRuntime({}, {}, "/home/projects/xyz"), true);
+  assert.equal(isWebContainerRuntime({}, { node: "22" }, "/home/user/project"), false);
 });

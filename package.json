@@ -6,7 +6,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/stackblitz/dev.mjs",
     "prebuild": "node scripts/preserve-data.mjs --snapshot",
     "build": "next build",
     "postbuild": "node scripts/sync-standalone.mjs && node scripts/preserve-data.mjs --restore",
@@ -14,7 +14,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm run lint",
-    "dev:stackblitz": "node scripts/stackblitz/dev.mjs",
+    "dev:stackblitz": "node scripts/stackblitz/dev.mjs --force",
     "diagnose:stackblitz": "node scripts/stackblitz/diagnose.mjs",
     "clean:next": "node scripts/stackblitz/clean.mjs",
     "smoke:stackblitz": "node scripts/stackblitz/smoke.mjs"
@@ -43,5 +43,11 @@
     "eslint-config-next": "15.5.25",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "stackblitz": {
+    "startCommand": "npm run dev",
+    "env": {
+      "ROSIE_STACKBLITZ": "1"
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import path from "node:path";
 import ts from "typescript";
 
 const exports = {};
@@ -43,7 +44,13 @@ test("public category filters exclude empty categories", () => {
 });
 
 test("Razieh's curated textile portfolio and both generated visuals are wired into seed content", () => {
-  const seed = fs.readFileSync("src/lib/data/seed.ts", "utf8");
+  // Seed content lives in the src/lib/data/seed/ module (split from the old single seed.ts).
+  const seedDir = "src/lib/data/seed";
+  const seed = fs
+    .readdirSync(seedDir)
+    .filter((file) => file.endsWith(".ts"))
+    .map((file) => fs.readFileSync(path.join(seedDir, file), "utf8"))
+    .join("\n");
   const portfolio = fs.readFileSync("src/lib/data/razieh-textile-portfolio.ts", "utf8");
   assert.match(seed, /RAZIEH_TEXTILE_PORTFOLIO/);
   assert.match(seed, /portfolioCategories/);

@@ -14,7 +14,12 @@ function walk(directory) {
 }
 
 test("every bundled media reference in the seed data resolves to a non-empty local file", () => {
-  const sources = ["src/lib/data/seed.ts", "src/lib/razieh-profile.ts", "src/lib/artist/portfolio-data.ts"];
+  // Seed content lives in the src/lib/data/seed/ module (split from the old single seed.ts).
+  const seedSources = fs
+    .readdirSync(path.join(root, "src/lib/data/seed"))
+    .filter((file) => file.endsWith(".ts"))
+    .map((file) => path.join("src/lib/data/seed", file));
+  const sources = [...seedSources, "src/lib/razieh-profile.ts", "src/lib/artist/portfolio-data.ts"];
   const refs = new Set();
   for (const source of sources) {
     const text = fs.readFileSync(path.join(root, source), "utf8");
