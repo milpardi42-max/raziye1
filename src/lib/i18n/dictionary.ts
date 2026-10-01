@@ -6,7 +6,7 @@ const fa = {
   nav: {
     patterns: "الگوها",
     products: "فروشگاه",
-    artists: "هنرمندان",
+    artists: "طراحان",
     portfolio: "پورتفولیو",
     education: "آکادمی",
     collections: "کالکشن‌ها",
@@ -242,7 +242,7 @@ const en: Dict = {
   nav: {
     patterns: "Patterns",
     products: "Shop",
-    artists: "Artists",
+    artists: "Designers",
     portfolio: "Portfolio",
     education: "Academy",
     collections: "Collections",

@@ -271,7 +271,7 @@ export function FinancialManager({ data, update, onSave }: FinancialManagerProps
               <Badge tone="accent">مدیریت مالی</Badge>
             </div>
             <p className="mt-0.5 text-xs text-foreground-secondary">
-              بررسی و کنترل متمرکز درصد کمیسیون پلتفرم، سهم فروش هنرمندان، تعرفه خرید اشتراک‌ها و قیمت‌گذاری کاتالوگ.
+              بررسی و کنترل متمرکز درصد کمیسیون پلتفرم، سهم فروش طراحان، تعرفه خرید اشتراک‌ها و قیمت‌گذاری کاتالوگ.
             </p>
           </div>
         </div>
@@ -359,8 +359,8 @@ export function FinancialManager({ data, update, onSave }: FinancialManagerProps
       <div className="flex items-center gap-2 border-b border-border pb-2 overflow-x-auto">
         {[
           { id: "commission" as const, label: "کمیسیون و سهم فروش پلتفرم", icon: <Percent className="h-4 w-4" /> },
-          { id: "subscriptions" as const, label: "تعرفه اشتراک‌های هنرمندان", icon: <Crown className="h-4 w-4" /> },
-          { id: "artists" as const, label: `سهم اختصاصی هنرمندان (${data.artists.length})`, icon: <Users className="h-4 w-4" /> },
+          { id: "subscriptions" as const, label: "تعرفه اشتراک‌های طراحان", icon: <Crown className="h-4 w-4" /> },
+          { id: "artists" as const, label: `سهم اختصاصی طراحان (${data.artists.length})`, icon: <Users className="h-4 w-4" /> },
           { id: "pricing-hub" as const, label: "ویرایشگر جامع قیمت‌های کاتالوگ و خدمات", icon: <DollarSign className="h-4 w-4" /> },
           { id: "rules" as const, label: "تسویه حساب، مالیات و ارسال", icon: <Calculator className="h-4 w-4" /> },
         ].map((tab) => (
@@ -396,7 +396,7 @@ export function FinancialManager({ data, update, onSave }: FinancialManagerProps
                 تنظیم درصد کمیسیون پیش‌فرض مارکت‌پلیس
               </h2>
               <p className="mt-1 text-xs text-foreground-secondary leading-relaxed">
-                این سهم برای هنرمندان تازه و آثار تازه‌ای که نرخ اختصاصی ندارند استفاده می‌شود. نرخ ذخیره‌شده روی آثار موجود برای جلوگیری از تغییر ناخواسته حفظ می‌شود.
+                این سهم برای طراحان تازه و آثار تازه‌ای که نرخ اختصاصی ندارند استفاده می‌شود. نرخ ذخیره‌شده روی آثار موجود برای جلوگیری از تغییر ناخواسته حفظ می‌شود.
               </p>
             </div>
 
@@ -527,7 +527,7 @@ export function FinancialManager({ data, update, onSave }: FinancialManagerProps
           <div className="rounded-3xl border-2 border-accent bg-surface p-6 shadow-soft space-y-5">
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-accent">پلن اصلی هنرمندان</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-accent">پلن اصلی طراحان</span>
                 <h3 className="font-display text-lg font-bold text-foreground">پلن حرفه‌ای Artist Pro</h3>
               </div>
               <Badge tone="accent">پیشنهاد اصلی</Badge>
@@ -741,7 +741,7 @@ export function FinancialManager({ data, update, onSave }: FinancialManagerProps
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border p-5">
             <div>
               <h2 className="font-display text-base font-bold text-foreground">
-                جدول بررسی و تنظیم سهم فروش اختصاصی هنرمندان
+                جدول بررسی و تنظیم سهم فروش اختصاصی طراحان
               </h2>
               <p className="text-xs text-foreground-secondary mt-0.5">
                 می‌توانید برای هر هنرمند سهم اختصاصی تعیین کنید؛ در صورت خالی بودن، سهم پیش‌فرض ({faNum(config.defaultArtistSharePct)}٪) اعمال می‌شود.
@@ -1022,13 +1022,13 @@ export function FinancialManager({ data, update, onSave }: FinancialManagerProps
             <div>
               <div className="flex items-center gap-2 text-accent text-xs font-bold uppercase">
                 <Wallet className="h-4 w-4" />
-                <span>تسویه حساب هنرمندان</span>
+                <span>تسویه حساب طراحان</span>
               </div>
               <h3 className="mt-1 font-display text-base font-bold text-foreground">
                 حداقل موجودی مجاز برای درخواست تسویه
               </h3>
               <p className="mt-1 text-xs text-foreground-secondary">
-                هنرمندان تنها در صورتی که موجودی کیف پول آن‌ها به این حد نصاب برسد می‌توانند درخواست واریز وجه ثبت کنند.
+                طراحان تنها در صورتی که موجودی کیف پول آن‌ها به این حد نصاب برسد می‌توانند درخواست واریز وجه ثبت کنند.
               </p>
             </div>
 

@@ -92,7 +92,7 @@ const SECTION_LABELS: Record<HomeSectionKey, string> = {
   trending: "پرطرفدارها",
   bestSellers: "پرفروش‌ترین‌ها",
   newPatterns: "الگوهای جدید",
-  artists: "هنرمندان منتخب",
+  artists: "طراحان منتخب",
   portfolios: "پورتفولیوهای منتخب",
   styles: "کاوش بر اساس سبک",
   spaces: "کاوش بر اساس فضا",
@@ -144,7 +144,7 @@ const NAV_GROUPS: NavGroup[] = [
       { id: "buyers", label: "خریداران", icon: <ShoppingBag className="h-4 w-4" /> },
       { id: "chats", label: "گفتگوهای آنلاین", icon: <MessageCircle className="h-4 w-4" /> },
       { id: "reservations", label: "رزرو رویدادها", icon: <CalendarClock className="h-4 w-4" /> },
-      { id: "artists-signup", label: "هنرمندان / طراحان", icon: <Palette className="h-4 w-4" /> },
+      { id: "artists-signup", label: "طراحان", icon: <Palette className="h-4 w-4" /> },
     ],
   },
   {
@@ -173,7 +173,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: "جامعه",
     items: [
-      { id: "artists", label: "هنرمندان", icon: <Users className="h-4 w-4" /> },
+      { id: "artists", label: "طراحان", icon: <Users className="h-4 w-4" /> },
       { id: "portfolios", label: "پورتفولیوها", icon: <GalleryHorizontalEnd className="h-4 w-4" /> },
       { id: "education", label: "آکادمی", icon: <BookOpen className="h-4 w-4" /> },
     ],

@@ -76,7 +76,7 @@ const SECTION_META: Record<HomeSectionKey, { label: string; icon: React.ReactNod
   trending:    { label: "پرطرفدارها",           icon: <Zap className="h-4 w-4" />,                 desc: "الگوهایی با پرچم trending" },
   bestSellers: { label: "پرفروش‌ترین‌ها",       icon: <Star className="h-4 w-4" />,                desc: "الگوها و محصولات با پرچم bestSeller" },
   newPatterns: { label: "الگوهای جدید",         icon: <Sparkles className="h-4 w-4" />,            desc: "الگوهایی با پرچم isNew" },
-  artists:     { label: "هنرمندان منتخب",       icon: <Users className="h-4 w-4" />,               desc: "هنرمندان با پرچم featured" },
+  artists:     { label: "طراحان منتخب",       icon: <Users className="h-4 w-4" />,               desc: "طراحان با پرچم featured" },
   portfolios:  { label: "پورتفولیوهای منتخب",  icon: <GalleryHorizontalEnd className="h-4 w-4" />, desc: "پروژه‌های featured" },
   styles:      { label: "کاوش بر اساس سبک",    icon: <Tag className="h-4 w-4" />,                 desc: "دسته‌بندی‌های featured" },
   spaces:      { label: "کاوش بر اساس فضا",    icon: <Home className="h-4 w-4" />,                desc: "فضاهای ثابت سایت" },
@@ -1100,7 +1100,7 @@ function ProductEditModal({ product, data, onSave, onClose, isNew }: { product: 
 }
 
 /* ══════════════════════════════════════════════════════════
-   ویرایشگر هنرمندان
+   ویرایشگر طراحان
    ══════════════════════════════════════════════════════════ */
 function ArtistsEditor({ data, update }: { data: SiteContent; update: (p: Partial<SiteContent>) => void }) {
   const [editTarget, setEditTarget] = useState<Artist | null>(null);
@@ -1111,7 +1111,7 @@ function ArtistsEditor({ data, update }: { data: SiteContent; update: (p: Partia
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <SectionHeader title="هنرمندان منتخب" count={featured.length} />
+        <SectionHeader title="طراحان منتخب" count={featured.length} />
         <button onClick={() => setShowAdd(true)} className="flex items-center gap-1.5 rounded-lg bg-[#1e2230] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#2a3045]"><Plus className="h-3.5 w-3.5" />افزودن هنرمند</button>
       </div>
       {featured.length === 0 ? <EmptyNote msg="هیچ هنرمند منتخبی ندارید." /> : (
