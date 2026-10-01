@@ -13,7 +13,7 @@ export const tr: Record<string, Bilingual> = {
   founded:     { fa: "تأسیس ۱۳۸۸",   en: "Est. 2009" },
 
   /* ---------- hero ---------- */
-  heroSub:     { fa: "طراح الگو · پارچه · پرده · کاغذ دیواری", en: "Pattern · Textile · Drapery · Wallpaper" },
+  heroSub:     { fa: "طراح پترن · پارچه · پرده · کاغذ دیواری", en: "Pattern · Textile · Drapery · Wallpaper" },
   heroName1:   { fa: "راضیه",         en: "Razieh" },
   heroName2:   { fa: "خیری‌پور",      en: "Kheiripour" },
   heroDesc:    {
@@ -21,16 +21,16 @@ export const tr: Record<string, Bilingual> = {
     en: "Creating a visual language in textures and surfaces — where Iranian art meets contemporary design.",
   },
   scrollDown:  { fa: "اسکرول",        en: "Scroll" },
-  tagPattern:  { fa: "الگو",           en: "Pattern" },
+  tagPattern:  { fa: "پترن",           en: "Pattern" },
   tagWallpaper:{ fa: "کاغذ دیواری",   en: "Wallpaper" },
   tagTextile:  { fa: "پارچه",          en: "Textile" },
   tagDrapery:  { fa: "پرده",           en: "Drapery" },
 
   /* ---------- about ---------- */
   aboutLabel:  { fa: "درباره هنرمند",  en: "About the Artist" },
-  aboutTitle:  { fa: "از الگو تا فضا", en: "From Pattern to Space" },
+  aboutTitle:  { fa: "از پترن تا فضا", en: "From Pattern to Space" },
   aboutBio1:   {
-    fa: "راضیه خیری‌پور، استادیار گروه هنرهای تزئینی، بیش از پانزده سال است که در تقاطع هنر سنتی ایران و طراحی معاصر آثار می‌آفریند. پژوهش‌ها و آثار او به طراحی الگو، کاغذ دیواری، پارچه و پرده اختصاص دارد.",
+    fa: "راضیه خیری‌پور، استادیار گروه هنرهای تزئینی، بیش از پانزده سال است که در تقاطع هنر سنتی ایران و طراحی معاصر آثار می‌آفریند. پژوهش‌ها و آثار او به طراحی پترن، کاغذ دیواری، پارچه و پرده اختصاص دارد.",
     en: "Razieh Kheiripour, assistant professor in decorative arts, has been creating works at the intersection of traditional Iranian art and contemporary design for over fifteen years. Her research and works focus on pattern design, wallpaper, textile and drapery.",
   },
   aboutBio2:   {
@@ -41,7 +41,7 @@ export const tr: Record<string, Bilingual> = {
     fa: "آثار او در دوازده نمایشگاه داخلی و بین‌المللی به نمایش درآمده‌اند و مجموعه‌های خصوصی و عمومی متعددی این آثار را در برمی‌گیرند.",
     en: "Her works have been shown in twelve national and international exhibitions, with multiple private and public collections holding her pieces.",
   },
-  stat1Label:  { fa: "الگوی خلق‌شده", en: "Patterns Created" },
+  stat1Label:  { fa: "پترن خلق‌شده", en: "Patterns Created" },
   stat2Label:  { fa: "نمایشگاه",      en: "Exhibitions" },
   stat3Label:  { fa: "دانشجو",        en: "Students" },
 
@@ -49,11 +49,11 @@ export const tr: Record<string, Bilingual> = {
   portfolioLabel: { fa: "آثار",           en: "Works" },
   portfolioTitle: { fa: "نمونه‌کارها",    en: "Portfolio" },
   portfolioDesc:  {
-    fa: "گزیده‌ای از پروژه‌های طراحی الگو، کاغذ دیواری، پارچه و پرده.",
+    fa: "گزیده‌ای از پروژه‌های طراحی پترن، کاغذ دیواری، پارچه و پرده.",
     en: "A selection of pattern design, wallpaper, textile, and drapery projects.",
   },
   filterAll:      { fa: "همه",            en: "All" },
-  filterPattern:  { fa: "الگو",           en: "Pattern" },
+  filterPattern:  { fa: "پترن",           en: "Pattern" },
   filterWallpaper:{ fa: "کاغذ دیواری",   en: "Wallpaper" },
   filterTextile:  { fa: "پارچه",          en: "Textile" },
   filterDrapery:  { fa: "پرده",           en: "Drapery" },
@@ -62,20 +62,20 @@ export const tr: Record<string, Bilingual> = {
 
   /* ---------- philosophy ---------- */
   quote: {
-    fa: "«الگو، زبانِ سکوتِ سطح است — هر خط، روایتی از زمین و آسمان.»",
+    fa: "«پترن، زبانِ سکوتِ سطح است — هر خط، روایتی از زمین و آسمان.»",
     en: "«Pattern is the silent language of surfaces — every line, a narrative of earth and sky.»",
   },
 
   /* ---------- academic ---------- */
   academicLabel:    { fa: "آموزش",              en: "Teaching" },
-  academicTitle:    { fa: "آموزش زبان الگو",    en: "Teaching the Language of Pattern" },
+  academicTitle:    { fa: "آموزش زبان پترن",    en: "Teaching the Language of Pattern" },
   academicDesc:     {
-    fa: "تدریس در دانشگاه هنر با تمرکز بر طراحی الگو و هنرهای تزئینی.",
+    fa: "تدریس در دانشگاه هنر با تمرکز بر طراحی پترن و هنرهای تزئینی.",
     en: "Teaching at the University of Art with a focus on pattern design and decorative arts.",
   },
   deptLabel:   { fa: "گروه هنرهای تزئینی", en: "Decorative Arts Department" },
   rankLabel:   { fa: "استادیار",            en: "Assistant Professor" },
-  ach1Label:   { fa: "الگوی آموزشی",       en: "Teaching Patterns" },
+  ach1Label:   { fa: "پترن آموزشی",       en: "Teaching Patterns" },
   ach2Label:   { fa: "نمایشگاه",           en: "Exhibitions" },
   ach3Label:   { fa: "دانشجو فارغ‌التحصیل", en: "Graduates" },
   ach4Label:   { fa: "سال تدریس",          en: "Years Teaching" },
@@ -125,7 +125,7 @@ export const WORKS: Work[] = [
     year: "1402",
     image: "/images/patterns/p01.jpg",
     layout: "tall",
-    description: { fa: "الگوی بوته‌جقه الهام‌گرفته از نقوش قاجاری با زبانی معاصر.", en: "Boteh pattern inspired by Qajar motifs with a contemporary language." },
+    description: { fa: "پترن بوته‌جقه الهام‌گرفته از نقوش قاجاری با زبانی معاصر.", en: "Boteh pattern inspired by Qajar motifs with a contemporary language." },
   },
   {
     id: "w02",
@@ -143,7 +143,7 @@ export const WORKS: Work[] = [
     year: "1402",
     image: "/images/patterns/p03.jpg",
     layout: "normal",
-    description: { fa: "پارچه با الگوی هندسی شبکه‌ای در رنگ‌های آبی و نقره‌ای.", en: "Textile with geometric lattice pattern in blue and silver tones." },
+    description: { fa: "پارچه با پترن هندسی شبکه‌ای در رنگ‌های آبی و نقره‌ای.", en: "Textile with geometric lattice pattern in blue and silver tones." },
   },
   {
     id: "w04",
@@ -170,7 +170,7 @@ export const WORKS: Work[] = [
     year: "1399",
     image: "/images/patterns/p06.jpg",
     layout: "wide",
-    description: { fa: "کاغذ دیواری هندسی با الگوی شطرنجی طلایی و مشکی.", en: "Geometric wallpaper with a golden and black chess pattern." },
+    description: { fa: "کاغذ دیواری هندسی با پترن شطرنجی طلایی و مشکی.", en: "Geometric wallpaper with a golden and black chess pattern." },
   },
   {
     id: "w07",
@@ -179,7 +179,7 @@ export const WORKS: Work[] = [
     year: "1402",
     image: "/images/patterns/p07.jpg",
     layout: "normal",
-    description: { fa: "الگویی برگرفته از خط کوفی، تبدیل به نقش تزئینی هندسی.", en: "Pattern derived from Kufic script, transformed into geometric decoration." },
+    description: { fa: "پترنی برگرفته از خط کوفی، تبدیل به نقش تزئینی هندسی.", en: "Pattern derived from Kufic script, transformed into geometric decoration." },
   },
   {
     id: "w08",
@@ -204,8 +204,8 @@ export const COURSES: Course[] = [
   {
     id: "c01",
     level: { fa: "کارشناسی", en: "Undergraduate" },
-    title: { fa: "طراحی الگو ۱ و ۲", en: "Pattern Design I & II" },
-    desc: { fa: "مبانی طراحی الگوهای تکرارشونده و کاربردهای صنعتی.", en: "Fundamentals of repeating pattern design and industrial applications." },
+    title: { fa: "طراحی پترن ۱ و ۲", en: "Pattern Design I & II" },
+    desc: { fa: "مبانی طراحی پترن‌های تکرارشونده و کاربردهای صنعتی.", en: "Fundamentals of repeating pattern design and industrial applications." },
   },
   {
     id: "c02",

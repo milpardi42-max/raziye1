@@ -59,7 +59,7 @@ export default async function StoryPage({ params }: Props) {
       </section>
       {patterns.length > 0 && (
         <section className="bg-background-secondary"><div className="container-x section-y">
-          <SectionHeader eyebrow={d.nav.patterns} title={locale === "fa" ? "الگوهای این هنرمند" : "Patterns by this artist"} href={a ? href(locale, `/artists/${a.slug}`) : undefined} hrefLabel={d.common.viewProfile} />
+          <SectionHeader eyebrow={d.nav.patterns} title={locale === "fa" ? "پترن‌های این هنرمند" : "Patterns by this artist"} href={a ? href(locale, `/artists/${a.slug}`) : undefined} hrefLabel={d.common.viewProfile} />
           <div className="mt-8 grid grid-cols-2 gap-5 md:grid-cols-4">{patterns.slice(0, 4).map((p) => <PatternCard key={p.id} pattern={p} />)}</div>
         </div></section>
       )}

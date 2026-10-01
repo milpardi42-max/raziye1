@@ -27,10 +27,10 @@ interface Props {
   /**
    * Product families (wallpaper, curtain, …). When given, the grid is split into
    * one labelled section per family — in the canonical order — and the sidebar
-   * gains the «الگو» group the families hang under.
+   * gains the «پترن» group the families hang under.
    */
   families?: FilterOption[];
-  /** Label of the parent group the families sit under («الگو»). */
+  /** Label of the parent group the families sit under («پترن»). */
   familyParent?: string;
 }
 
@@ -77,7 +77,7 @@ function FilteredContent({ site, locale, categories, sorts, extra, title, famili
   };
 
   const lead: FilterGroup[] = families?.length
-    ? [{ key: "family", label: familyParent ?? (fa ? "الگو" : "Pattern"), options: families, appearance: "nested" }]
+    ? [{ key: "family", label: familyParent ?? (fa ? "پترن" : "Pattern"), options: families, appearance: "nested" }]
     : [];
 
   return (

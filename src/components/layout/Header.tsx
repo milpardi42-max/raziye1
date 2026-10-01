@@ -85,7 +85,7 @@ export function Header({ nav }: { nav: NavData }) {
   /*
    * Primary navigation — home first, then the four sections in the order set by the shop:
    * خانه · آکادمی · طراحان · پورتفولیو · فروشگاه
-   * الگوها و فایل دیجیتال از داخل پنل فروشگاه و فوتر در دسترس می‌مانند.
+   * پترن‌ها و فایل دیجیتال از داخل پنل فروشگاه و فوتر در دسترس می‌مانند.
    */
   const links: { key: string; label: string; href: string; panel?: Panel; home?: boolean }[] = [
     { key: "home", label: dict.nav.home, href: href(locale, "/"), home: true },

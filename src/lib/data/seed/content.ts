@@ -20,12 +20,12 @@ export const portfolios: Portfolio[] = [
     id: "portfolio-penthouse-elaheye",
     slug: "penthouse-elaheye",
     title: L("پنت‌هاوس الهیه؛ روایت مس روی اسلیت", "Elahieh Penthouse — Copper on Slate"),
-    subtitle: L("الگوی گیاهی با خطوط مسی برای پنجره‌های قوسی", "A botanical with copper linework for arched windows"),
-    intro: L("برای این پنت‌هاوس ۲۸۰ متری، یک الگوی گیاهی با خطوط مسی روی زمینه‌ی اسلیت طراحی شد تا نور صبحگاهی پنجره‌های قوسی را بازتاب دهد.", "For this 280 m² penthouse, a bespoke botanical with copper linework on a slate ground was colour-matched to the morning light of the arched windows."),
+    subtitle: L("پترن گیاهی با خطوط مسی برای پنجره‌های قوسی", "A botanical with copper linework for arched windows"),
+    intro: L("برای این پنت‌هاوس ۲۸۰ متری، یک پترن گیاهی با خطوط مسی روی زمینه‌ی اسلیت طراحی شد تا نور صبحگاهی پنجره‌های قوسی را بازتاب دهد.", "For this 280 m² penthouse, a bespoke botanical with copper linework on a slate ground was colour-matched to the morning light of the arched windows."),
     story: [
       { type: "text", text: L("رنگ‌بندی اختصاصی در سه مرحله نمونه‌گیری نهایی شد تا با نور طبیعی پنجره‌های قوسی هماهنگ شود.", "The custom colourway was finalised across three sampling rounds to harmonise with the natural light of the arched windows.") },
       { type: "image", image: "/images/portfolios/pf-penthouse.jpg", caption: L("نمای کلی فضا پس از نصب", "Space overview after installation") },
-      { type: "quote", text: L("الگو نباید فریاد بزند؛ باید مثل نور صبح وارد فضا شود.", "A pattern shouldn't shout — it should enter the room like morning light.") },
+      { type: "quote", text: L("پترن نباید فریاد بزند؛ باید مثل نور صبح وارد فضا شود.", "A pattern shouldn't shout — it should enter the room like morning light.") },
       { type: "text", text: L("متریال نان‌وون پریمیوم ۲۰۰ گرم انتخاب شد و نصب در ۱۸ روز به پایان رسید.", "A 200 gsm premium non-woven substrate was chosen; installation was completed in 18 days.") },
     ],
     cover: "/images/portfolios/pf-penthouse.jpg",
@@ -39,27 +39,27 @@ export const portfolios: Portfolio[] = [
     id: "portfolio-hotel-narenjestan",
     slug: "hotel-narenjestan",
     title: L("هتل بوتیک نارنجستان؛ لابی شب‌رنگ", "Narenjestan Boutique Hotel — Lobby"),
-    subtitle: L("الگوی مشبک هندسی ایرانی با خطوط مسی روی اسلیت تیره", "Persian lattice in copper line on deep slate"),
-    intro: L("لابی هتل با یک الگوی مشبک هندسی ایرانی با خطوط مسی روی اسلیت تیره پوشیده شد؛ ترکیبی که در نور آویزها عمق پیدا می‌کند.", "The hotel lobby was clad in a Persian lattice in copper line on deep slate — a combination that gains depth under pendant light."),
+    subtitle: L("پترن مشبک هندسی ایرانی با خطوط مسی روی اسلیت تیره", "Persian lattice in copper line on deep slate"),
+    intro: L("لابی هتل با یک پترن مشبک هندسی ایرانی با خطوط مسی روی اسلیت تیره پوشیده شد؛ ترکیبی که در نور آویزها عمق پیدا می‌کند.", "The hotel lobby was clad in a Persian lattice in copper line on deep slate — a combination that gains depth under pendant light."),
     story: [
       { type: "image", image: "/images/portfolios/pf-hotel.jpg", caption: L("لابی پس از نصب", "Lobby after installation") },
-      { type: "text", text: L("الگو با مخمل آبی مبلمان گفت‌وگو می‌کند و عمق شب‌رنگ فضا را تکمیل می‌کند.", "The pattern converses with the blue velvet seating and completes the nocturnal depth of the space.") },
-      { type: "pair", images: ["/images/patterns/p08.jpg", "/images/portfolios/pf-hotel.jpg"], caption: L("الگو در کنار فضای نهایی", "Pattern beside the finished space") },
+      { type: "text", text: L("پترن با مخمل آبی مبلمان گفت‌وگو می‌کند و عمق شب‌رنگ فضا را تکمیل می‌کند.", "The pattern converses with the blue velvet seating and completes the nocturnal depth of the space.") },
+      { type: "pair", images: ["/images/patterns/p08.jpg", "/images/portfolios/pf-hotel.jpg"], caption: L("پترن در کنار فضای نهایی", "Pattern beside the finished space") },
       { type: "text", text: L("متریال وینیل تجاری ضدخش کلاس B1 در ۱۴۰ متر مربع در ۲۶ روز نصب شد.", "Class B1 commercial anti-scratch vinyl — 140 m² installed in 26 days.") },
     ],
     cover: "/images/portfolios/pf-hotel.jpg",
     gallery: ["/images/portfolios/pf-hotel.jpg", "/images/patterns/p08.jpg"],
     artistId: "artist-arman-kian", patternIds: ["pattern-copper-damask"], productIds: ["product-wallpaper-copper-damask", "product-curtain-copper-damask"],
     client: L("هتل بوتیک نارنجستان", "Narenjestan Boutique Hotel"), location: L("تهران", "Tehran"), year: 2025,
-    scope: L("طراحی الگو، کاغذدیواری تجاری، پرده، نصب", "Pattern design, commercial wallpaper, curtains, installation"),
+    scope: L("طراحی پترن، کاغذدیواری تجاری، پرده، نصب", "Pattern design, commercial wallpaper, curtains, installation"),
     categoryId: "cat-luxury", featured: true, isProject: true, size: "tall",
   },
   {
     id: "portfolio-villa-lavasan",
     slug: "villa-lavasan",
     title: L("ویلای لواسان؛ آرامش گل و برگ", "Lavasan Villa — Master Bedroom"),
-    subtitle: L("الگوی آبرنگی گل‌های صدتومانی روی زمینه‌ی عاجی گرم", "Watercolour peonies on warm ivory"),
-    intro: L("دیوار تاج تخت با الگوی آبرنگی از گل‌های صدتومانی و برگ‌های مریم‌گلی اجرا شد؛ مقیاس طوری تنظیم شد که از فاصله‌ی تخت، آرام و بی‌تکرار دیده شود.", "The headboard wall was executed with a watercolour peony and sage botanical — scaled so the repeat disappears from the bed's viewpoint."),
+    subtitle: L("پترن آبرنگی گل‌های صدتومانی روی زمینه‌ی عاجی گرم", "Watercolour peonies on warm ivory"),
+    intro: L("دیوار تاج تخت با پترن آبرنگی از گل‌های صدتومانی و برگ‌های مریم‌گلی اجرا شد؛ مقیاس طوری تنظیم شد که از فاصله‌ی تخت، آرام و بی‌تکرار دیده شود.", "The headboard wall was executed with a watercolour peony and sage botanical — scaled so the repeat disappears from the bed's viewpoint."),
     story: [
       { type: "image", image: "/images/portfolios/pf-bedroom.jpg" },
       { type: "text", text: L("متریال کاغذ بافت‌دار مات با تکرار ۹۶ سانتی‌متر در ۲۲ متر مربع اجرا شد.", "Textured matte paper with a 96 cm repeat — 22 m² installed in 5 days.") },
@@ -76,7 +76,7 @@ export const portfolios: Portfolio[] = [
     slug: "cafe-sangfarsh",
     title: L("کافه‌ی سنگ‌فرش؛ انتزاع ترازو", "Sangfarsh Café — Terrazzo Abstract"),
     subtitle: L("دیوار شاخص، خودش اثر هنری است", "The feature wall becomes the artwork itself"),
-    intro: L("برای فضای صنعتی-مینیمال کافه، یک الگوی انتزاعی با ضربه‌قلم‌های مشکی، شنی و مسی در ابعاد بزرگ طراحی شد.", "For the industrial-minimal café, a large-scale brushstroke abstraction in black, sand and copper was designed."),
+    intro: L("برای فضای صنعتی-مینیمال کافه، یک پترن انتزاعی با ضربه‌قلم‌های مشکی، شنی و مسی در ابعاد بزرگ طراحی شد.", "For the industrial-minimal café, a large-scale brushstroke abstraction in black, sand and copper was designed."),
     story: [
       { type: "image", image: "/images/portfolios/pf-cafe.jpg" },
       { type: "text", text: L("وینیل مات ضدلک بدون تکرار به‌صورت پانل سفارشی در ۱۸ متر مربع در ۳ روز نصب شد.", "Matte anti-stain vinyl with no repeat — custom panel, 18 m² in 3 days.") },
@@ -85,7 +85,7 @@ export const portfolios: Portfolio[] = [
     gallery: ["/images/portfolios/pf-cafe.jpg", "/images/patterns/p05.jpg"],
     artistId: null, patternIds: ["pattern-torn-paper"], productIds: [],
     client: L("کافه سنگ‌فرش", "Sangfarsh Café"), location: L("کرج", "Karaj"), year: 2024,
-    scope: L("طراحی الگو، چاپ پانل سفارشی", "Pattern design, custom panel print"),
+    scope: L("طراحی پترن، چاپ پانل سفارشی", "Pattern design, custom panel print"),
     categoryId: "cat-abstract", featured: true, isProject: true, size: "wide",
   },
   {
@@ -93,7 +93,7 @@ export const portfolios: Portfolio[] = [
     slug: "nursery-moon-cloud",
     title: L("اتاق نوزاد؛ ماه، ابر و بالن", "Nursery — Moon, Cloud & Balloon"),
     subtitle: L("چاپ با جوهر پایه‌آب، مناسب اتاق نوزاد", "Printed with odourless water-based inks"),
-    intro: L("الگوی پاستلی با ماه‌های خواب‌آلود، ابر و بالن‌های کوچک در کرم، آبی پودری و خردلی؛ چاپ با جوهر پایه‌آب بدون بو.", "A pastel nursery pattern with sleepy moons, clouds and little balloons in cream, powder blue and mustard — printed with odourless water-based inks."),
+    intro: L("پترن پاستلی با ماه‌های خواب‌آلود، ابر و بالن‌های کوچک در کرم، آبی پودری و خردلی؛ چاپ با جوهر پایه‌آب بدون بو.", "A pastel nursery pattern with sleepy moons, clouds and little balloons in cream, powder blue and mustard — printed with odourless water-based inks."),
     story: [
       { type: "image", image: "/images/portfolios/pf-kids.jpg" },
       { type: "text", text: L("نان‌وون بدون PVC با جوهر گرین‌گارد، مناسب اتاق نوزاد؛ ۱۴ متر مربع در ۲ روز.", "PVC-free non-woven with GreenGuard ink — 14 m² in 2 days.") },
@@ -130,9 +130,9 @@ export const portfolios: Portfolio[] = [
 /* ------------------------------------------------------------------ */
 const body = (fa: string, en: string) => L(fa, en);
 export const education: EducationItem[] = [
-  { id: "edu-pattern-design-foundations", slug: "pattern-design-foundations", type: "course", title: L("مبانی طراحی الگو", "Pattern Design Foundations"), excerpt: L("از موتیف تا تکرار بی‌درز؛ برای کاغذدیواری، پارچه و پرده.", "From motif to seamless repeat — for wallpaper, fabric and curtains."), body: body("در این دوره یاد می‌گیرید چطور یک موتیف را طراحی، پالت را انتخاب و تکرار بی‌درز بسازید. هر درس با تمرین عملی همراه است.\n\nفصل اول به مشاهده و اسکیس می‌پردازد. فصل دوم به ساختار تکرار: بلوک، نیم‌افت و آجری. فصل سوم درباره‌ی رنگ و مقیاس برای کاغذ دیواری و پارچه است.", "In this course you learn to design a motif, choose a palette and build a seamless repeat. Every lesson comes with a practical exercise.\n\nChapter one covers observation and sketching. Chapter two covers repeat structures: block, half-drop and brick. Chapter three covers colour and scale for wallpaper and textile."), image: "/images/education/e01.jpg", authorId: "artist-razieh-khairipour", difficulty: "beginner", durationMin: 420, lessons: 18, price: { fa: 980000, en: 29 }, lessonList: [ { id: "l01", title: L("معرفی دوره و ابزارها", "Course intro & tools"), durationMin: 12, free: true }, { id: "l02", title: L("مشاهده و اسکیس اولیه", "Observation & first sketch"), durationMin: 22, free: true }, { id: "l03", title: L("ساده‌سازی موتیف", "Simplifying the motif"), durationMin: 28 }, { id: "l04", title: L("تکرار بلوک", "Block repeat"), durationMin: 24 }, { id: "l05", title: L("تکرار نیم‌افت", "Half-drop repeat"), durationMin: 26 }, { id: "l06", title: L("تکرار آجری", "Brick repeat"), durationMin: 24 }, { id: "l07", title: L("انتخاب پالت رنگی", "Choosing a colour palette"), durationMin: 30 }, { id: "l08", title: L("مقیاس برای کاغذدیواری", "Scale for wallpaper"), durationMin: 22 }, { id: "l09", title: L("مقیاس برای پارچه", "Scale for fabric"), durationMin: 20 }, { id: "l10", title: L("تبدیل به فایل دیجیتال", "Converting to digital file"), durationMin: 35 }, { id: "l11", title: L("تمیزکاری و اسکن", "Clean-up & scanning"), durationMin: 28 }, { id: "l12", title: L("رنگ‌بندی جدید (کالروِی)", "New colourway"), durationMin: 30 }, { id: "l13", title: L("آماده‌سازی فایل چاپ", "Preparing print file"), durationMin: 25 }, { id: "l14", title: L("خروجی AI و PDF", "Exporting AI & PDF"), durationMin: 18 }, { id: "l15", title: L("ارائه به مشتری", "Presenting to a client"), durationMin: 20 }, { id: "l16", title: L("لایسنس تجاری", "Commercial licence"), durationMin: 15 }, { id: "l17", title: L("قیمت‌گذاری و فروش", "Pricing & selling"), durationMin: 18 }, { id: "l18", title: L("پروژه نهایی", "Final project"), durationMin: 45 }, ], categoryId: "cat-botanical", patternIds: ["pattern-quiet-garden", "pattern-dusty-bloom"], productIds: ["product-wallpaper-quiet-garden", "product-fabric-dusty-bloom"], featured: true, popular: true, publishedAt: "2026-06-01" },
+  { id: "edu-pattern-design-foundations", slug: "pattern-design-foundations", type: "course", title: L("مبانی طراحی پترن", "Pattern Design Foundations"), excerpt: L("از موتیف تا تکرار بی‌درز؛ برای کاغذدیواری، پارچه و پرده.", "From motif to seamless repeat — for wallpaper, fabric and curtains."), body: body("در این دوره یاد می‌گیرید چطور یک موتیف را طراحی، پالت را انتخاب و تکرار بی‌درز بسازید. هر درس با تمرین عملی همراه است.\n\nفصل اول به مشاهده و اسکیس می‌پردازد. فصل دوم به ساختار تکرار: بلوک، نیم‌افت و آجری. فصل سوم درباره‌ی رنگ و مقیاس برای کاغذ دیواری و پارچه است.", "In this course you learn to design a motif, choose a palette and build a seamless repeat. Every lesson comes with a practical exercise.\n\nChapter one covers observation and sketching. Chapter two covers repeat structures: block, half-drop and brick. Chapter three covers colour and scale for wallpaper and textile."), image: "/images/education/e01.jpg", authorId: "artist-razieh-khairipour", difficulty: "beginner", durationMin: 420, lessons: 18, price: { fa: 980000, en: 29 }, lessonList: [ { id: "l01", title: L("معرفی دوره و ابزارها", "Course intro & tools"), durationMin: 12, free: true }, { id: "l02", title: L("مشاهده و اسکیس اولیه", "Observation & first sketch"), durationMin: 22, free: true }, { id: "l03", title: L("ساده‌سازی موتیف", "Simplifying the motif"), durationMin: 28 }, { id: "l04", title: L("تکرار بلوک", "Block repeat"), durationMin: 24 }, { id: "l05", title: L("تکرار نیم‌افت", "Half-drop repeat"), durationMin: 26 }, { id: "l06", title: L("تکرار آجری", "Brick repeat"), durationMin: 24 }, { id: "l07", title: L("انتخاب پالت رنگی", "Choosing a colour palette"), durationMin: 30 }, { id: "l08", title: L("مقیاس برای کاغذدیواری", "Scale for wallpaper"), durationMin: 22 }, { id: "l09", title: L("مقیاس برای پارچه", "Scale for fabric"), durationMin: 20 }, { id: "l10", title: L("تبدیل به فایل دیجیتال", "Converting to digital file"), durationMin: 35 }, { id: "l11", title: L("تمیزکاری و اسکن", "Clean-up & scanning"), durationMin: 28 }, { id: "l12", title: L("رنگ‌بندی جدید (کالروِی)", "New colourway"), durationMin: 30 }, { id: "l13", title: L("آماده‌سازی فایل چاپ", "Preparing print file"), durationMin: 25 }, { id: "l14", title: L("خروجی AI و PDF", "Exporting AI & PDF"), durationMin: 18 }, { id: "l15", title: L("ارائه به مشتری", "Presenting to a client"), durationMin: 20 }, { id: "l16", title: L("لایسنس تجاری", "Commercial licence"), durationMin: 15 }, { id: "l17", title: L("قیمت‌گذاری و فروش", "Pricing & selling"), durationMin: 18 }, { id: "l18", title: L("پروژه نهایی", "Final project"), durationMin: 45 }, ], categoryId: "cat-botanical", patternIds: ["pattern-quiet-garden", "pattern-dusty-bloom"], productIds: ["product-wallpaper-quiet-garden", "product-fabric-dusty-bloom"], featured: true, popular: true, publishedAt: "2026-06-01" },
   { id: "edu-colour-for-interiors", slug: "colour-for-interiors", type: "course", title: L("رنگ برای فضای داخلی", "Colour for Interiors"), excerpt: L("چطور پالت کاغذدیواری، پارچه و پرده را با نور فضا هماهنگ کنیم.", "How to tune wallpaper, fabric and curtain palettes to a room's light."), body: body("سارا مهر با مثال‌های واقعی توضیح می‌دهد چطور یک پالت را برای نور شمالی یا جنوبی تنظیم کند.", "Sara Mehr explains with real examples how to adjust a palette for north- or south-facing light."), image: "/images/education/e02.jpg", authorId: "artist-sara-mehr", difficulty: "intermediate", durationMin: 180, lessons: 6, price: { fa: 590000, en: 18 }, categoryId: "cat-floral", patternIds: ["pattern-dusty-bloom", "pattern-little-moons"], productIds: [], featured: false, popular: true, publishedAt: "2026-08-05", draftStatus: "published" as const },
-  { id: "edu-geometry-and-rhythm", slug: "geometry-and-rhythm", type: "course", title: L("هندسه و ریتم", "Geometry & Rhythm"), excerpt: L("ساخت الگوهای هندسی دقیق برای کاغذدیواری و پارچه مبلی.", "Building precise geometric patterns for wallpaper and upholstery fabric."), body: body("آرمان کیان روش کارش با شبکه‌های شش‌ضلعی و تقارن‌های ۱۷گانه را آموزش می‌دهد.", "Arman Kian teaches his method with hexagonal grids and the 17 wallpaper symmetry groups."), image: "/images/education/e03.jpg", authorId: "artist-arman-kian", difficulty: "advanced", durationMin: 300, lessons: 12, categoryId: "cat-geometric", patternIds: ["pattern-arc-lattice", "pattern-hairline-grid"], productIds: ["product-fabric-arc-lattice", "product-wallpaper-copper-damask"], featured: true, popular: false, publishedAt: "2026-05-20" },
+  { id: "edu-geometry-and-rhythm", slug: "geometry-and-rhythm", type: "course", title: L("هندسه و ریتم", "Geometry & Rhythm"), excerpt: L("ساخت پترن‌های هندسی دقیق برای کاغذدیواری و پارچه مبلی.", "Building precise geometric patterns for wallpaper and upholstery fabric."), body: body("آرمان کیان روش کارش با شبکه‌های شش‌ضلعی و تقارن‌های ۱۷گانه را آموزش می‌دهد.", "Arman Kian teaches his method with hexagonal grids and the 17 wallpaper symmetry groups."), image: "/images/education/e03.jpg", authorId: "artist-arman-kian", difficulty: "advanced", durationMin: 300, lessons: 12, categoryId: "cat-geometric", patternIds: ["pattern-arc-lattice", "pattern-hairline-grid"], productIds: ["product-fabric-arc-lattice", "product-wallpaper-copper-damask"], featured: true, popular: false, publishedAt: "2026-05-20" },
   { id: "edu-persian-ornament-course", slug: "persian-ornament-course", type: "course", title: L("نقش ایرانی: اسلیمی و ختایی", "Persian Ornament: Eslimi & Khatai"), excerpt: L("یادگیری سه خانواده اصلی نقش ایرانی برای طراحی معاصر.", "Learning the three main families of Persian ornament for contemporary design."), body: body("حسین تبریزی با چهار دهه تجربه، اسلیمی، ختایی و بته‌جقه را آموزش می‌دهد.", "Hossein Tabrizi with four decades of experience teaches eslimi, khatai and boteh."), image: "/images/education/e04.jpg", authorId: "artist-hossein-tabrizi", difficulty: "intermediate", durationMin: 360, lessons: 14, price: { fa: 890000, en: 27 }, categoryId: "cat-persian", patternIds: ["pattern-lapis-eslimi"], productIds: [], featured: false, popular: true, publishedAt: "2026-04-02", draftStatus: "published" as const },
 
   /* ── ورکشاپ آنلاین ── */
@@ -181,7 +181,7 @@ export const education: EducationItem[] = [
     slug: "webinar-market-trends-2026",
     type: "webinar",
     title: L("وبینار: ترندهای بازار کاغذدیواری ۲۰۲۶", "Webinar: Wallpaper Market Trends 2026"),
-    excerpt: L("بررسی ترندهای رنگ، الگو و متریال برای سال آینده با کارشناسان صنعت.", "An expert panel reviewing colour, pattern and material trends for the coming year."),
+    excerpt: L("بررسی ترندهای رنگ، پترن و متریال برای سال آینده با کارشناسان صنعت.", "An expert panel reviewing colour, pattern and material trends for the coming year."),
     body: body(
       "این وبینار رایگان با حضور سه متخصص صنعت، آخرین گزارش‌های بازار جهانی کاغذدیواری را بررسی می‌کند و پیش‌بینی‌هایی برای ۲۰۲۶ ارائه می‌دهد.",
       "This free webinar features three industry specialists reviewing the latest global wallpaper market reports and offering predictions for 2026."
@@ -223,7 +223,7 @@ export const education: EducationItem[] = [
 export const stories: Story[] = [
   { id: "story-niloufar-rad-morning-light", slug: "niloufar-rad-morning-light", artistId: "artist-niloufar-rad", title: L("نور صبح در استودیوی نیلوفر", "Morning light in Niloufar's studio"), excerpt: L("از یک برگ تا کاغذدیواری؛ درباره‌ی گواش، صبر و چاپ روی سطح.", "From one leaf to wallpaper — on gouache, patience and printing on surface."), body: L("«من همیشه با یک برگ شروع می‌کنم…»", '"I always begin with a single leaf\u2026"'), image: "/images/artists/cover-niloufar.jpg", publishedAt: "2026-07-01" },
   { id: "story-hossein-tabrizi-forty-years", slug: "hossein-tabrizi-forty-years", artistId: "artist-hossein-tabrizi", title: L("چهل سال با نقش", "Forty years with ornament"), excerpt: L("از کارگاه کاشی تا کاغذدیواری و دکور معاصر.", "From the tile workshop to contemporary wallpaper and décor."), body: L("«نقش زبان است؛ فقط باید امروز حرفش را بزنی.»", '"Ornament is a language; you just have to speak it today."'), image: "/images/artists/cover-hossein.jpg", publishedAt: "2026-06-12" },
-  { id: "story-sara-mehr-small-stories", slug: "sara-mehr-small-stories", artistId: "artist-sara-mehr", title: L("داستان‌های کوچک سارا", "Sara's small stories"), excerpt: L("چطور پارچه و کاغذدیواری کودک می‌تواند یک کتاب تصویری باشد.", "How kids' fabric and wallpaper can become a picture book."), body: L("«الگوی کودک باید مثل لالایی باشد.»", '"A kids\' pattern should feel like a lullaby."'), image: "/images/artists/cover-sara.jpg", publishedAt: "2026-05-22" },
+  { id: "story-sara-mehr-small-stories", slug: "sara-mehr-small-stories", artistId: "artist-sara-mehr", title: L("داستان‌های کوچک سارا", "Sara's small stories"), excerpt: L("چطور پارچه و کاغذدیواری کودک می‌تواند یک کتاب تصویری باشد.", "How kids' fabric and wallpaper can become a picture book."), body: L("«پترن کودک باید مثل لالایی باشد.»", '"A kids\' pattern should feel like a lullaby."'), image: "/images/artists/cover-sara.jpg", publishedAt: "2026-05-22" },
 ];
 
 export const collections: Collection[] = [
@@ -256,7 +256,7 @@ export const announcementBars: AnnouncementBarConfig[] = [
     id: "ab-webinar",
     kind: "webinar",
     enabled: false,
-    message: L("وبینار طراحی الگو — همین حالا ثبت‌نام کنید!", "Pattern design webinar — register now!"),
+    message: L("وبینار طراحی پترن — همین حالا ثبت‌نام کنید!", "Pattern design webinar — register now!"),
     href: "/academy",
     ctaLabel: L("ثبت‌نام", "Register"),
     bgColor: "#1a1a2e",
@@ -288,10 +288,10 @@ export const announcementBars: AnnouncementBarConfig[] = [
 ];
 
 export const seo: SeoMeta[] = [
-  { path: "/", title: L("رزی آتلیه — الگو، کاغذدیواری، پارچه و دکور", "Rosie Atelier — Pattern, Wallpaper, Fabric & Décor"), description: L("الگوهای اورجینال برای کاغذدیواری، طراحی پارچه، پرده و دکور — با طراحان مستقل.", "Original patterns for wallpaper, fabric design, curtains and décor — with independent designers.") },
-  { path: "/patterns", title: L("الگوها — رزی آتلیه", "Patterns — Rosie Atelier"), description: L("کتابخانه‌ی الگوهای اورجینال با لایسنس تجاری برای سطح و فضا.", "A library of original patterns with commercial licenses for surface and space.") },
-  { path: "/shop", title: L("فروشگاه — کاغذدیواری، پارچه، پرده، دکور", "Shop — Wallpaper, Fabric, Curtains, Décor"), description: L("کاغذدیواری، طراحی پارچه، پرده و اشیاء دکور با الگوهای رزی آتلیه.", "Wallpaper, fabric design, curtains and décor objects with Rosie Atelier patterns.") },
+  { path: "/", title: L("رزی آتلیه — پترن، کاغذدیواری، پارچه و دکور", "Rosie Atelier — Pattern, Wallpaper, Fabric & Décor"), description: L("پترن‌های اورجینال برای کاغذدیواری، طراحی پارچه، پرده و دکور — با طراحان مستقل.", "Original patterns for wallpaper, fabric design, curtains and décor — with independent designers.") },
+  { path: "/patterns", title: L("پترن‌ها — رزی آتلیه", "Patterns — Rosie Atelier"), description: L("کتابخانه‌ی پترن‌های اورجینال با لایسنس تجاری برای سطح و فضا.", "A library of original patterns with commercial licenses for surface and space.") },
+  { path: "/shop", title: L("فروشگاه — کاغذدیواری، پارچه، پرده، دکور", "Shop — Wallpaper, Fabric, Curtains, Décor"), description: L("کاغذدیواری، طراحی پارچه، پرده و اشیاء دکور با پترن‌های رزی آتلیه.", "Wallpaper, fabric design, curtains and décor objects with Rosie Atelier patterns.") },
   { path: "/portfolio", title: L("پورتفولیو — رزی آتلیه", "Portfolio — Rosie Atelier"), description: L("پروژه‌های اجراشده: کاغذدیواری، پرده و دکور در فضاهای واقعی.", "Realised projects: wallpaper, curtains and décor in real spaces.") },
-  { path: "/academy", title: L("آکادمی — رزی آتلیه", "Academy — Rosie Atelier"), description: L("آموزش طراحی الگو از مبانی تا کاغذدیواری و پارچه.", "Pattern design education from foundations to wallpaper and textile.") },
+  { path: "/academy", title: L("آکادمی — رزی آتلیه", "Academy — Rosie Atelier"), description: L("آموزش طراحی پترن از مبانی تا کاغذدیواری و پارچه.", "Pattern design education from foundations to wallpaper and textile.") },
 ];
 

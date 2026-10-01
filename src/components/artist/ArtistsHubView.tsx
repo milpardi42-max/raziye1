@@ -33,7 +33,7 @@ const disciplines: {
       "botanical",
       "floral",
       "پترن",
-      "الگو",
+      "پترن",
       "کاغذدیواری",
     ],
   },

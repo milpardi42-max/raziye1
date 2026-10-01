@@ -44,8 +44,6 @@ export function Footer() {
     {
       title: dict.footer.company,
       links: [
-        [fa ? "پورتفولیوی راضیه خیری‌پور" : "Razieh Kheiripour's portfolio", "/razieh"],
-        [dict.nav.about, "/about"],
         [dict.nav.projects, "/projects"],
         [dict.nav.custom, "/custom"],
         [dict.nav.stories, "/stories"],
@@ -114,7 +112,7 @@ export function Footer() {
             </div>
             <p className="mt-3 text-xs leading-6 text-foreground-secondary">
               {fa
-                ? "اولین نفرهایی باشید که الگوهای جدید، تخفیف‌ها و رویدادهای آکادمی را می‌بینید."
+                ? "اولین نفرهایی باشید که پترن‌های جدید، تخفیف‌ها و رویدادهای آکادمی را می‌بینید."
                 : "Be the first to see new patterns, special offers and academy events."}
             </p>
             <NewsletterForm compact className="mt-5" />

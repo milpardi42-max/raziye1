@@ -87,7 +87,7 @@ export default async function ProductPage({ params }: Props) {
 
       {pattern && (
         <section className="container-x section-y">
-          <SectionHeader eyebrow={d.nav.patterns} title={locale === "fa" ? "الگوی این محصول" : "The pattern behind this product"} href={href(locale, `/patterns/${pattern.slug}`)} hrefLabel={d.common.viewPattern} />
+          <SectionHeader eyebrow={d.nav.patterns} title={locale === "fa" ? "پترن این محصول" : "The pattern behind this product"} href={href(locale, `/patterns/${pattern.slug}`)} hrefLabel={d.common.viewPattern} />
           <div className="mt-8 grid gap-6 lg:grid-cols-12">
             <div className="lg:col-span-4"><PatternCard pattern={pattern} /></div>
             <div className="lg:col-span-8 flex flex-col justify-center rounded-lg bg-background-secondary p-8">

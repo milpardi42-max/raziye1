@@ -80,8 +80,8 @@ export default async function PatternsPage({ params, searchParams }: { params: P
                 categories={categories}
                 sorts={sorts}
                 extra={extra}
-                title={fa ? "کشف الگو" : "Discover patterns"}
-                mobileLabel={fa ? "فیلتر الگوها" : "Filter patterns"}
+                title={fa ? "کشف پترن" : "Discover patterns"}
+                mobileLabel={fa ? "فیلتر پترن‌ها" : "Filter patterns"}
               />
             }
           >

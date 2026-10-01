@@ -42,7 +42,7 @@ export interface CatalogAsset {
  */
 
 const KINDS: { id: AssetKind; fa: string; en: string }[] = [
-  { id: "pattern", fa: "الگو", en: "Pattern" },
+  { id: "pattern", fa: "پترن", en: "Pattern" },
   { id: "illustration", fa: "تصویرسازی", en: "Illustration" },
   { id: "photo", fa: "عکس", en: "Photo" },
   { id: "vector", fa: "وکتور", en: "Vector" },

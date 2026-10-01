@@ -155,7 +155,7 @@ export function ArtistInquiryForm({
             name="projectType"
             maxLength={200}
             placeholder={
-              fa ? "مثلاً طراحی الگوی پارچه" : "e.g. A textile pattern design"
+              fa ? "مثلاً طراحی پترن پارچه" : "e.g. A textile pattern design"
             }
             className={inputClass}
           />

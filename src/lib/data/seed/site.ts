@@ -16,10 +16,10 @@ import {
 } from "./content";
 
 export const hero: HeroContent = {
-  eyebrow: L("استودیوی الگو و طراحی · از ۱۴۰۲", "Pattern & design studio · est. 2023"),
-  titleA: L("الگوهایی که", "Patterns that"),
+  eyebrow: L("استودیوی پترن و طراحی · از ۱۴۰۲", "Pattern & design studio · est. 2023"),
+  titleA: L("پترن‌هایی که", "Patterns that"),
   titleB: L("فضا را روایت می‌کنند.", "tell the story of a space."),
-  description: L("رزی آتلیه پلتفرم کشف الگو، محصولات دکوراتیو و همکاری با طراحان مستقل است — از سطح تا سبک زندگی.", "Rosie Atelier is a platform for discovering patterns, decorative products and collaborating with independent designers — from surface to lifestyle."),
+  description: L("رزی آتلیه پلتفرم کشف پترن، محصولات دکوراتیو و همکاری با طراحان مستقل است — از سطح تا سبک زندگی.", "Rosie Atelier is a platform for discovering patterns, decorative products and collaborating with independent designers — from surface to lifestyle."),
   /* 4 paired slides: each bg matches the same-index featured pattern preview card */
   image: "/images/hero/hero-bg-01.jpg",
   images: [
@@ -62,7 +62,7 @@ export const portfolioHero: PortfolioHeroSettings = {
   titleLine1En: "From a pattern,",
   titleLine2Fa: "به یک جهان.",
   titleLine2En: "a world unfolds.",
-  descFa: "در مرز میان هنر و زندگی؛ مجموعه‌ای از الگوها، بافت‌ها و فضاها. با نگاه طراح آشنا شوید و مسیر شکل‌گیری ایده‌ها را در آثار رزی آتلیه دنبال کنید.",
+  descFa: "در مرز میان هنر و زندگی؛ مجموعه‌ای از پترن‌ها، بافت‌ها و فضاها. با نگاه طراح آشنا شوید و مسیر شکل‌گیری ایده‌ها را در آثار رزی آتلیه دنبال کنید.",
   descEn: "Where art meets everyday life. Explore a collection of patterns, textures and spaces, meet the designer, and follow ideas as they take shape at Rosie Atelier.",
 };
 

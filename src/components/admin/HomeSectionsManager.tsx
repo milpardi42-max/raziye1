@@ -72,10 +72,10 @@ function uid() {
    ══════════════════════════════════════════════════════════ */
 const SECTION_META: Record<HomeSectionKey, { label: string; icon: React.ReactNode; desc: string }> = {
   hero:        { label: "هیرو (بنر اصلی)",      icon: <Image className="h-4 w-4" />,               desc: "بنر تمام‌صفحه با عنوان، CTA و رسانه" },
-  discovery:   { label: "کشف الگو",             icon: <Palette className="h-4 w-4" />,             desc: "معرفی کتابخانه الگوهای سایت" },
-  trending:    { label: "پرطرفدارها",           icon: <Zap className="h-4 w-4" />,                 desc: "الگوهایی با پرچم trending" },
-  bestSellers: { label: "پرفروش‌ترین‌ها",       icon: <Star className="h-4 w-4" />,                desc: "الگوها و محصولات با پرچم bestSeller" },
-  newPatterns: { label: "الگوهای جدید",         icon: <Sparkles className="h-4 w-4" />,            desc: "الگوهایی با پرچم isNew" },
+  discovery:   { label: "کشف پترن",             icon: <Palette className="h-4 w-4" />,             desc: "معرفی کتابخانه پترن‌های سایت" },
+  trending:    { label: "پرطرفدارها",           icon: <Zap className="h-4 w-4" />,                 desc: "پترن‌هایی با پرچم trending" },
+  bestSellers: { label: "پرفروش‌ترین‌ها",       icon: <Star className="h-4 w-4" />,                desc: "پترن‌ها و محصولات با پرچم bestSeller" },
+  newPatterns: { label: "پترن‌های جدید",         icon: <Sparkles className="h-4 w-4" />,            desc: "پترن‌هایی با پرچم isNew" },
   artists:     { label: "طراحان منتخب",       icon: <Users className="h-4 w-4" />,               desc: "طراحان با پرچم featured" },
   portfolios:  { label: "پورتفولیوهای منتخب",  icon: <GalleryHorizontalEnd className="h-4 w-4" />, desc: "پروژه‌های featured" },
   styles:      { label: "کاوش بر اساس سبک",    icon: <Tag className="h-4 w-4" />,                 desc: "دسته‌بندی‌های featured" },
@@ -720,7 +720,7 @@ function HeroEditor({ data, update }: { data: SiteContent; update: (p: Partial<S
       </div>
 
       {/* ══════════════════════════════════════
-          بخش چهارم: الگوهای پیش‌نمایش
+          بخش چهارم: پترن‌های پیش‌نمایش
           ══════════════════════════════════════ */}
       <div className="overflow-hidden rounded-xl border border-border bg-white shadow-soft">
         <div className="flex items-center justify-between gap-2 border-b border-border bg-[#f7f8fa] px-4 py-3">
@@ -729,8 +729,8 @@ function HeroEditor({ data, update }: { data: SiteContent; update: (p: Partial<S
               <Palette className="h-3.5 w-3.5" />
             </span>
             <div>
-              <p className="text-xs font-semibold text-foreground">الگوهای پیش‌نمایش</p>
-              <p className="text-[10px] text-muted">الگوهایی که در کارت شناور سمت راست هیرو نمایش داده می‌شوند</p>
+              <p className="text-xs font-semibold text-foreground">پترن‌های پیش‌نمایش</p>
+              <p className="text-[10px] text-muted">پترن‌هایی که در کارت شناور سمت راست هیرو نمایش داده می‌شوند</p>
             </div>
           </div>
           {h.featuredPatternIds.length > 0 && (
@@ -781,7 +781,7 @@ function HeroEditor({ data, update }: { data: SiteContent; update: (p: Partial<S
             <div className="mt-3 flex items-center gap-2 rounded-lg border border-success/20 bg-success/8 px-3 py-2">
               <Check className="h-3.5 w-3.5 shrink-0 text-success" />
               <p className="text-[11px] text-success font-medium">
-                {h.featuredPatternIds.length} الگو انتخاب شده — ترتیب انتخاب برابر ترتیب نمایش در کارت است
+                {h.featuredPatternIds.length} پترن انتخاب شده — ترتیب انتخاب برابر ترتیب نمایش در کارت است
               </p>
             </div>
           )}
@@ -814,7 +814,7 @@ function HsmToggleRow({ icon, label, desc, checked, onChange }: {
 }
 
 /* ══════════════════════════════════════════════════════════
-   ویرایشگر الگوها
+   ویرایشگر پترن‌ها
    ══════════════════════════════════════════════════════════ */
 function PatternsEditor({ sectionKey, data, update }: { sectionKey: HomeSectionKey; data: SiteContent; update: (p: Partial<SiteContent>) => void }) {
   const [editTarget, setEditTarget] = useState<Pattern | null>(null);
@@ -832,7 +832,7 @@ function PatternsEditor({ sectionKey, data, update }: { sectionKey: HomeSectionK
   const setPatterns = (patterns: Pattern[]) => update({ patterns });
 
   const deletePattern = (id: string) => {
-    if (!confirm("این الگو حذف شود؟")) return;
+    if (!confirm("این پترن حذف شود؟")) return;
     setPatterns(data.patterns.filter(p => p.id !== id));
   };
   const savePattern = (p: Pattern) => {
@@ -847,17 +847,17 @@ function PatternsEditor({ sectionKey, data, update }: { sectionKey: HomeSectionK
     setPatterns(data.patterns.map(p => p.id === id ? { ...p, [f]: !p[f] } : p));
   };
 
-  const titleLabel: Record<string, string> = { trending: "پرطرفدار", bestSellers: "پرفروش", newPatterns: "جدید", discovery: "همه الگوها" };
+  const titleLabel: Record<string, string> = { trending: "پرطرفدار", bestSellers: "پرفروش", newPatterns: "جدید", discovery: "همه پترن‌ها" };
 
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <SectionHeader title={titleLabel[sectionKey] ?? "الگوها"} count={filtered.length} />
+        <SectionHeader title={titleLabel[sectionKey] ?? "پترن‌ها"} count={filtered.length} />
         <button onClick={() => setShowAdd(true)} className="flex items-center gap-1.5 rounded-lg bg-[#1e2230] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#2a3045]">
-          <Plus className="h-3.5 w-3.5" />افزودن الگو
+          <Plus className="h-3.5 w-3.5" />افزودن پترن
         </button>
       </div>
-      {filtered.length === 0 ? <EmptyNote msg="الگویی با این پرچم ندارید." /> : (
+      {filtered.length === 0 ? <EmptyNote msg="پترنی با این پرچم ندارید." /> : (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map(p => (
             <PatternCard key={p.id} pattern={p}
@@ -880,7 +880,7 @@ function newPattern(data: SiteContent): Pattern {
   const id = uid();
   return {
     id, sku: `RA-PT-${Date.now().toString().slice(-4)}`, slug: `new-pattern-${id}`,
-    title: L("الگوی جدید", "New Pattern"), description: L("", ""),
+    title: L("پترن جدید", "New Pattern"), description: L("", ""),
     image: "/images/patterns/p01.jpg", gallery: [], categoryId: data.categories[0]?.id ?? "",
     spaceIds: [], artistId: null, price: { fa: 1500000, en: 40 },
     specs: { repeat: L("۶۴ سانتی‌متر", "64 cm"), dpi: "300 DPI", formats: "AI · PDF · TIFF", colors: 4, scale: L("متوسط", "Medium") },
@@ -951,7 +951,7 @@ function PatternEditModal({ pattern, data, onSave, onClose, isNew }: { pattern: 
   const [p, setP] = useState<Pattern>({ ...pattern });
   const set = (patch: Partial<Pattern>) => setP(prev => ({ ...prev, ...patch }));
   return (
-    <Modal title={isNew ? "افزودن الگوی جدید" : `ویرایش: ${t(p.title, "fa")}`} onClose={onClose}>
+    <Modal title={isNew ? "افزودن پترن جدید" : `ویرایش: ${t(p.title, "fa")}`} onClose={onClose}>
       <div className="space-y-4">
         <div className="grid gap-3 sm:grid-cols-2">
           <FRow label="عنوان (فارسی)"><FInput value={p.title.fa} onChange={v => set({ title: { ...p.title, fa: v } })} /></FRow>
@@ -1335,14 +1335,14 @@ function StylesEditor({ data, update }: { data: SiteContent; update: (p: Partial
                 <p className="absolute bottom-2 right-3 text-sm font-bold text-white">{t(c.name, "fa")}</p>
                 <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
                   <button onClick={() => setEditTarget(c)} className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-foreground hover:bg-accent hover:text-white"><Pencil className="h-3.5 w-3.5" /></button>
-                  <button onClick={() => { if (patCount > 0) { alert("این سبک در الگوها استفاده می‌شود."); return; } if (confirm("حذف شود؟")) setCats(data.categories.filter(x => x.id !== c.id)); }}
+                  <button onClick={() => { if (patCount > 0) { alert("این سبک در پترن‌ها استفاده می‌شود."); return; } if (confirm("حذف شود؟")) setCats(data.categories.filter(x => x.id !== c.id)); }}
                     className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-error hover:bg-error hover:text-white"><Trash2 className="h-3.5 w-3.5" /></button>
                 </div>
               </div>
               <div className="px-3 py-2.5">
                 <p className="line-clamp-1 text-xs text-muted">{t(c.description, "fa")}</p>
                 <div className="mt-1.5 flex items-center justify-between">
-                  <span className="text-[10px] text-muted">{patCount} الگو</span>
+                  <span className="text-[10px] text-muted">{patCount} پترن</span>
                   <div className="flex gap-1">
                     <button onClick={() => setCats(data.categories.map(x => x.id === c.id ? { ...x, featured: !x.featured } : x))}
                       className={cn("rounded-full border px-2 py-0.5 text-[10px] font-medium", c.featured ? "border-accent bg-accent/10 text-accent" : "border-border text-muted")}>

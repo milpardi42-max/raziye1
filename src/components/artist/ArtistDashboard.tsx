@@ -100,7 +100,7 @@ export function ArtistDashboard() {
   }
 
   const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
-    { id: "patterns", label: fa ? `الگوها (${data?.patterns.length ?? 0})` : `Patterns (${data?.patterns.length ?? 0})`, icon: <BarChart3 className="h-4 w-4" /> },
+    { id: "patterns", label: fa ? `پترن‌ها (${data?.patterns.length ?? 0})` : `Patterns (${data?.patterns.length ?? 0})`, icon: <BarChart3 className="h-4 w-4" /> },
     { id: "products", label: fa ? `محصولات (${data?.products.length ?? 0})` : `Products (${data?.products.length ?? 0})`, icon: <PackagePlus className="h-4 w-4" /> },
     { id: "profile", label: fa ? "پروفایل" : "Profile", icon: <User className="h-4 w-4" /> },
     { id: "stats", label: fa ? "آمار" : "Stats", icon: <TrendingUp className="h-4 w-4" /> },
@@ -122,7 +122,7 @@ export function ArtistDashboard() {
               onClick={() => { setEditTarget(null); setFormMode("new-pattern"); }}
             >
               <Plus className="h-4 w-4" />
-              {fa ? "الگوی جدید" : "New pattern"}
+              {fa ? "پترن جدید" : "New pattern"}
             </Button>
             <Button
               size="sm"
@@ -176,7 +176,7 @@ export function ArtistDashboard() {
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-1.5 text-sm text-foreground-secondary">
                       <LayoutGrid className="h-3.5 w-3.5" />
-                      {fa ? "الگوها" : "Patterns"}
+                      {fa ? "پترن‌ها" : "Patterns"}
                     </span>
                     <span className="text-sm font-semibold">{data?.patterns.length ?? 0}</span>
                   </div>
@@ -257,7 +257,7 @@ function ItemGrid({
   if (!items.length) {
     return (
       <EmptyState
-        title={fa ? `هنوز ${type === "pattern" ? "الگویی" : "محصولی"} ندارید.` : `No ${type}s yet.`}
+        title={fa ? `هنوز ${type === "pattern" ? "پترنی" : "محصولی"} ندارید.` : `No ${type}s yet.`}
         description={fa ? "اولین آیتم خود را اضافه کنید." : "Add your first item."}
       />
     );
@@ -365,7 +365,7 @@ function StatsPanel({ data, fa, locale }: { data: ArtistData | null; fa: boolean
 
   const kpiCards = [
     {
-      label: fa ? "تعداد الگوها" : "Total patterns",
+      label: fa ? "تعداد پترن‌ها" : "Total patterns",
       value: n(totalPatterns),
       icon: <LayoutGrid className="h-5 w-5" />,
       color: "text-accent",
@@ -389,7 +389,7 @@ function StatsPanel({ data, fa, locale }: { data: ArtistData | null; fa: boolean
       trend: totalLikes > 0 ? "up" : null,
     },
     {
-      label: fa ? "میانگین قیمت الگو" : "Avg pattern price",
+      label: fa ? "میانگین قیمت پترن" : "Avg pattern price",
       value: locale === "fa" ? `${avgPrice.toLocaleString("fa-IR")} ت` : `$${avgPrice.toFixed(0)}`,
       icon: <DollarSign className="h-5 w-5" />,
       color: "text-success",
@@ -432,7 +432,7 @@ function StatsPanel({ data, fa, locale }: { data: ArtistData | null; fa: boolean
               <div className="flex items-center justify-between text-sm">
                 <span className="flex items-center gap-1.5 text-foreground-secondary">
                   <span className="h-2.5 w-2.5 rounded-full bg-accent" />
-                  {fa ? "الگوها" : "Patterns"}
+                  {fa ? "پترن‌ها" : "Patterns"}
                 </span>
                 <span className="font-semibold tabular">{patternPct}%</span>
               </div>
@@ -468,7 +468,7 @@ function StatsPanel({ data, fa, locale }: { data: ArtistData | null; fa: boolean
         <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft">
           <div className="flex items-center gap-2">
             <Heart className="h-4 w-4 text-error" />
-            <p className="font-semibold">{fa ? "محبوب‌ترین الگو" : "Most liked pattern"}</p>
+            <p className="font-semibold">{fa ? "محبوب‌ترین پترن" : "Most liked pattern"}</p>
           </div>
           {topPattern ? (
             <div className="mt-4 flex items-center gap-4">
@@ -492,7 +492,7 @@ function StatsPanel({ data, fa, locale }: { data: ArtistData | null; fa: boolean
               </div>
             </div>
           ) : (
-            <p className="mt-6 text-sm text-foreground-secondary">{fa ? "هنوز الگویی اضافه نکرده‌اید." : "No patterns yet."}</p>
+            <p className="mt-6 text-sm text-foreground-secondary">{fa ? "هنوز پترنی اضافه نکرده‌اید." : "No patterns yet."}</p>
           )}
         </div>
       </div>
@@ -502,7 +502,7 @@ function StatsPanel({ data, fa, locale }: { data: ArtistData | null; fa: boolean
         <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft">
           <div className="flex items-center gap-2">
             <BarChart3 className="h-4 w-4 text-muted" />
-            <p className="font-semibold">{fa ? "توزیع قیمت الگوها" : "Pattern price distribution"}</p>
+            <p className="font-semibold">{fa ? "توزیع قیمت پترن‌ها" : "Pattern price distribution"}</p>
           </div>
           <div className="mt-5 flex items-end gap-1.5 h-20">
             {(data?.patterns ?? []).map((p, i) => {
@@ -1010,7 +1010,7 @@ function FormPanel({
               {isEdit ? (fa ? "ویرایش" : "Edit") : (fa ? "افزودن جدید" : "Add new")}
             </p>
             <h2 className="mt-0.5 font-display text-lg font-semibold">
-              {isProduct ? (fa ? "محصول" : "Product") : (fa ? "الگو" : "Pattern")}
+              {isProduct ? (fa ? "محصول" : "Product") : (fa ? "پترن" : "Pattern")}
             </h2>
           </div>
           <button type="button" onClick={onClose} className="rounded-xl p-2 hover:bg-background-secondary">
@@ -1027,7 +1027,7 @@ function FormPanel({
               <SectionHeading icon={<Pencil className="h-3.5 w-3.5" />} label={fa ? "اطلاعات پایه" : "Basic info"} />
               <div className="grid gap-3 sm:grid-cols-2">
                 <Field label={fa ? "عنوان فارسی *" : "Title (fa) *"}>
-                  <Input name="title_fa" required dir="rtl" defaultValue={initial?.title?.fa ?? ""} placeholder={fa ? "نام الگو یا محصول" : "Persian title"} />
+                  <Input name="title_fa" required dir="rtl" defaultValue={initial?.title?.fa ?? ""} placeholder={fa ? "نام پترن یا محصول" : "Persian title"} />
                 </Field>
                 <Field label={fa ? "عنوان انگلیسی *" : "Title (en) *"}>
                   <Input name="title_en" required dir="ltr" defaultValue={initial?.title?.en ?? ""} placeholder="English title" />
@@ -1215,7 +1215,7 @@ function FormPanel({
                   value={patImageVal}
                   onChange={setPatImageVal}
                   fa={fa}
-                  label={fa ? "تصویر اصلی الگو" : "Main pattern image"}
+                  label={fa ? "تصویر اصلی پترن" : "Main pattern image"}
                 />
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Field label={fa ? "نوع تکرار (فا)" : "Repeat type (fa)"}>

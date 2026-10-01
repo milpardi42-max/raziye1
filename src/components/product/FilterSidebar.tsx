@@ -36,7 +36,7 @@ interface Props {
   sorts: FilterOption[];
   extra?: FilterGroup[];
   /**
-   * Groups rendered *above* the category group. Used by the shop for the «الگو»
+   * Groups rendered *above* the category group. Used by the shop for the «پترن»
    * family tree (wallpaper, curtain, …) that hangs under the pattern parent.
    */
   lead?: FilterGroup[];

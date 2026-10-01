@@ -52,7 +52,7 @@ interface Props {
 }
 
 const KIND_LABEL: Record<string, { fa: string; en: string }> = {
-  pattern: { fa: "الگو", en: "Pattern" },
+  pattern: { fa: "پترن", en: "Pattern" },
   illustration: { fa: "تصویرسازی", en: "Illustration" },
   photo: { fa: "عکس", en: "Photo" },
   vector: { fa: "وکتور", en: "Vector" },
@@ -182,7 +182,7 @@ export function AssetDetail({ locale, asset, artistName, couponHint }: Props) {
           <div className="rounded-xl border border-border p-4">
             <p className="flex items-center gap-2 text-caption text-foreground-secondary">
               <Layers className="h-3.5 w-3.5" />
-              {fa ? "وضعیت درزبندی الگو" : "Pattern seam check"}
+              {fa ? "وضعیت درزبندی پترن" : "Pattern seam check"}
             </p>
             <p className="mt-1 font-medium">
               {asset.seamless.verdict === "seamless"

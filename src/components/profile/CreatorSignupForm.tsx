@@ -232,7 +232,7 @@ export function CreatorSignupForm({ options }: CreatorSignupFormProps) {
           <Textarea
             name="bio"
             rows={2}
-            placeholder={fa ? "درباره سابقه کاری، تکنیک‌های پتینه، طراحی الگو یا سبک هنری خود بنویسید…" : "Describe your techniques, patina experience or design style…"}
+            placeholder={fa ? "درباره سابقه کاری، تکنیک‌های پتینه، طراحی پترن یا سبک هنری خود بنویسید…" : "Describe your techniques, patina experience or design style…"}
           />
         </Field>
         <Field label={fa ? "رمز عبور (حداقل ۶ کاراکتر)" : "Password (min 6 chars)"}>

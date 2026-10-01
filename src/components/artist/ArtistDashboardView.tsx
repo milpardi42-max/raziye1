@@ -66,7 +66,7 @@ export function ArtistDashboardView({ locale, data }: { locale: Locale; data: Ar
   // Commission status toggle
   const [acceptingCommissions, setAcceptingCommissions] = useState(initialArtist?.acceptsCommissions ?? true);
   const [commissionNotice, setCommissionNotice] = useState(
-    initialArtist?.commissionNotice?.fa || "آماده پذیرش سفارش‌های جدید پتینه، بافت دیوار و طراحی الگوهای اختصاصی.",
+    initialArtist?.commissionNotice?.fa || "آماده پذیرش سفارش‌های جدید پتینه، بافت دیوار و طراحی پترن‌های اختصاصی.",
   );
   const [savingSettings, setSavingSettings] = useState(false);
   const [settingsSavedMsg, setSettingsSavedMsg] = useState(false);
@@ -489,7 +489,7 @@ export function ArtistDashboardView({ locale, data }: { locale: Locale; data: Ar
                   </h3>
                   <p className="text-xs text-foreground-secondary mt-0.5">
                     {fa
-                      ? "علاوه بر فروش الگوها، غرفه اختصاصی خود را در صفحه هنرمندان فعال کرده و کارهای پتینه و پروژه‌های سفارشی بفروشید."
+                      ? "علاوه بر فروش پترن‌ها، غرفه اختصاصی خود را در صفحه هنرمندان فعال کرده و کارهای پتینه و پروژه‌های سفارشی بفروشید."
                       : "Sell custom wall patina, bespoke wallpapers, and direct commissions directly to interior designers."}
                   </p>
                 </div>
@@ -509,7 +509,7 @@ export function ArtistDashboardView({ locale, data }: { locale: Locale; data: Ar
               <div className="flex items-center justify-between border-b border-border px-6 py-4">
                 <div className="flex items-center gap-2">
                   <FileStack className="h-4 w-4 text-accent" />
-                  <h2 className="font-display text-h3">{fa ? "طرح‌ها و الگوهای شما" : "Your Works"}</h2>
+                  <h2 className="font-display text-h3">{fa ? "طرح‌ها و پترن‌های شما" : "Your Works"}</h2>
                   <Badge tone="neutral">{data.works.length}</Badge>
                 </div>
                 <Link
@@ -923,7 +923,7 @@ export function ArtistDashboardView({ locale, data }: { locale: Locale; data: Ar
                     className="h-10 w-full rounded-xl border border-border bg-background px-3 text-xs focus:border-accent focus:outline-none"
                   >
                     <option value="patina">{fa ? "پتینه و بافت‌های دکوراتیو دیوار" : "Wall Patina & Finishes"}</option>
-                    <option value="custom_pattern">{fa ? "طراحی پترن و الگوی اختصاصی پروژه" : "Custom Pattern Design"}</option>
+                    <option value="custom_pattern">{fa ? "طراحی پترن و پترن اختصاصی پروژه" : "Custom Pattern Design"}</option>
                     <option value="canvas_art">{fa ? "تابلوی نقاشی بوم و نقاشی دیواری" : "Canvas Art & Wall Murals"}</option>
                     <option value="interior_consulting">{fa ? "مشاوره کانسپت هنری و پالت رنگ" : "Art Direction & Color Palette"}</option>
                     <option value="sculpture_craft">{fa ? "آثار دست‌ساز و گچ‌بری برجسته" : "Handcrafted Sculptural Decor"}</option>

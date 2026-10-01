@@ -6,6 +6,7 @@ import { addPrice, clampPrice, ZERO_PRICE } from "./money";
 import { getAssets } from "./assets";
 import { getLicenses, getSubscriptions } from "./orders";
 import { getCoupons } from "./orders";
+import { ensureMarketplaceSeed } from "./seed";
 import { artistBalance } from "./royalty";
 import type {
   AnalyticsEvent,
@@ -104,6 +105,7 @@ export interface ArtistAnalyticsInput {
 export async function getArtistAnalytics(input: ArtistAnalyticsInput): Promise<ArtistAnalytics> {
   const days = Math.min(Math.max(input.days ?? 30, 1), 365);
   const from = daysAgo(days);
+  await ensureMarketplaceSeed();
 
   const [ledger, licenses, assets, subscriptions, events, coupons, payouts] = await Promise.all([
     readCollection<LedgerEntry>(KEYS.ledger),
@@ -267,6 +269,7 @@ export interface PlatformAnalytics {
 export async function getPlatformAnalytics(days = 30): Promise<PlatformAnalytics> {
   const range = Math.min(Math.max(days, 1), 365);
   const from = daysAgo(range);
+  await ensureMarketplaceSeed();
   const [ledger, licenses, assets, subscriptions, events, payouts, orders] = await Promise.all([
     readCollection<LedgerEntry>(KEYS.ledger),
     getLicenses(),

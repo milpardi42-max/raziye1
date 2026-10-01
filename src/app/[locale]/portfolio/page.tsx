@@ -59,7 +59,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
         </h2>
         <p className="mt-3 max-w-2xl text-body-lg text-foreground-secondary">
           {locale === "fa"
-            ? "نگاهی به طراحی الگو، ساخت پارچه، ترکیب رنگ و پروژه‌های پوشیدنی و فضایی."
+            ? "نگاهی به طراحی پترن، ساخت پارچه، ترکیب رنگ و پروژه‌های پوشیدنی و فضایی."
             : "A look at pattern design, textile making, colour, and wearable or spatial work."}
         </p>
       </section>

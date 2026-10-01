@@ -15,6 +15,7 @@ import { scanBuffer, sha256 } from "./scanner";
 import { WATERMARK_LINES, buildDerivatives, cornerTagFor, readImageSize, renderColourwayPreview } from "./media";
 import { detectFormat, formatById, formatStoredMime, minUploadBytes, verifyFileSignature, type ExportFormatId } from "./formats";
 import { DEFAULT_COLOURWAY_ID, sanitizeHex } from "./colourways";
+import { ensureMarketplaceSeed } from "./seed";
 import { refundPrice } from "./royalty";
 import type { Localized } from "@/lib/i18n/types";
 import type {
@@ -88,6 +89,7 @@ export interface AssetQuery {
 }
 
 export async function getAssets(): Promise<Asset[]> {
+  await ensureMarketplaceSeed();
   return readCollection<Asset>(KEYS.assets);
 }
 

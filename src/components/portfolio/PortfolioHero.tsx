@@ -127,7 +127,7 @@ export function PortfolioHero({
               </a>
             </div>
             <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] text-white/50">
-              <span>{fa ? "طراحی الگو" : "Pattern design"}</span>
+              <span>{fa ? "طراحی پترن" : "Pattern design"}</span>
               <span className="h-1 w-1 rounded-full bg-[#d6bc8e]/60" aria-hidden />
               <span>{fa ? "پارچه و کاغذدیواری" : "Textile & wallpaper"}</span>
               <span className="h-1 w-1 rounded-full bg-[#d6bc8e]/60" aria-hidden />

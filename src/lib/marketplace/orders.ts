@@ -1,5 +1,6 @@
 import "server-only";
 import { KEYS, mutateCollection, readCollection } from "./store";
+import { ensureMarketplaceSeed } from "./seed";
 import { newId } from "./assets";
 import { artistBalance, defaultAffiliatePct, defaultArtistPct, saleEntries, splitRevenue } from "./royalty";
 import { addPrice, chargeFor, clampPrice, isZeroPrice, scalePrice, subPrice, ZERO_PRICE } from "./money";
@@ -434,6 +435,7 @@ export async function quote(request: QuoteRequest): Promise<Quote> {
 /* ------------------------------------------------------------------ */
 
 export async function getOrders(): Promise<MarketplaceOrder[]> {
+  await ensureMarketplaceSeed();
   return readCollection<MarketplaceOrder>(KEYS.orders);
 }
 
@@ -523,6 +525,7 @@ export async function setOrderStatus(id: string, status: MarketplaceOrderStatus,
 /* ------------------------------------------------------------------ */
 
 export async function getLicenses(): Promise<License[]> {
+  await ensureMarketplaceSeed();
   return readCollection<License>(KEYS.licenses);
 }
 
