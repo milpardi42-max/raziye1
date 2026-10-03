@@ -20,7 +20,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const d = dictionaries[locale];
   const stats = siteStatistics(site);
   const fa = locale === "fa";
-  const values = fa ? [["الگو", "زبان مشترک سطح و فضا."], ["طراحی", "دقیق، مینیمال، بادوام."], ["خلاقیت", "با احترام به ریشه و نگاه به آینده."], ["سبک زندگی", "چیزهایی که هر روز با آن‌ها زندگی می‌کنیم."]] : [["Pattern", "The shared language of surface and space."], ["Design", "Precise, minimal, lasting."], ["Creativity", "Respecting roots, looking forward."], ["Lifestyle", "The things we live with every day."]];
+  const values = fa ? [["پترن", "زبان مشترک سطح و فضا."], ["طراحی", "دقیق، مینیمال، بادوام."], ["خلاقیت", "با احترام به ریشه و نگاه به آینده."], ["سبک زندگی", "چیزهایی که هر روز با آن‌ها زندگی می‌کنیم."]] : [["Pattern", "The shared language of surface and space."], ["Design", "Precise, minimal, lasting."], ["Creativity", "Respecting roots, looking forward."], ["Lifestyle", "The things we live with every day."]];
 
   const breadcrumb = [
     { label: d.nav.home, href: href(locale, "/") },
@@ -31,7 +31,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     <>
       <PageHero
         eyebrow={d.nav.about}
-        title={fa ? "رزی آتلیه؛ استودیویی برای الگو و فضا" : "Rosie Atelier — a studio for pattern and space"}
+        title={fa ? "رزی آتلیه؛ استودیویی برای پترن و فضا" : "Rosie Atelier — a studio for pattern and space"}
         description={d.footer.about}
         image={site.hero.image}
         breadcrumb={breadcrumb}
@@ -40,8 +40,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       />
       <section className="container-x section-y grid gap-12 lg:grid-cols-12">
         <div className="prose-ra lg:col-span-7">
-          <p>{fa ? "رزی آتلیه در سال ۱۴۰۲ توسط راضیه خیری‌پور با یک ایده‌ی ساده شروع شد: الگوهای خوب باید راهی مستقیم به دیوارها، پارچه‌ها و اشیای زندگی روزمره داشته باشند؛ و طراحان‌شان باید دیده و منصفانه پرداخت شوند." : "Rosie Atelier was founded in 2023 by Razieh Kheiripour with a simple idea: good patterns deserve a direct path to walls, textiles and everyday objects — and their designers deserve to be seen and paid fairly."}</p>
-          <p>{fa ? "امروز رزی آتلیه یک مارکت‌پلیس الگو، یک فروشگاه محصولات اختصاصی، یک گالری پورتفولیو و یک آکادمی است؛ همه در یک اکوسیستم." : "Today Rosie Atelier is a pattern marketplace, an exclusive product store, a portfolio gallery and an academy — all in one ecosystem."}</p>
+          <p>{fa ? "رزی آتلیه در سال ۱۴۰۲ توسط راضیه خیری‌پور با یک ایده‌ی ساده شروع شد: پترن‌های خوب باید راهی مستقیم به دیوارها، پارچه‌ها و اشیای زندگی روزمره داشته باشند؛ و طراحان‌شان باید دیده و منصفانه پرداخت شوند." : "Rosie Atelier was founded in 2023 by Razieh Kheiripour with a simple idea: good patterns deserve a direct path to walls, textiles and everyday objects — and their designers deserve to be seen and paid fairly."}</p>
+          <p>{fa ? "امروز رزی آتلیه یک مارکت‌پلیس پترن، یک فروشگاه محصولات اختصاصی، یک گالری پورتفولیو و یک آکادمی است؛ همه در یک اکوسیستم." : "Today Rosie Atelier is a pattern marketplace, an exclusive product store, a portfolio gallery and an academy — all in one ecosystem."}</p>
         </div>
         <dl className="grid grid-cols-2 gap-4 lg:col-span-5">
           {[[stats.patterns, d.home.heroStat1], [stats.artists, d.home.heroStat2], [stats.projects, d.home.heroStat3], [2, fa ? "زبان" : "languages"]].map(([n, l]) => <Reveal key={String(l)} className="rounded-lg border border-border p-6"><dd className="font-display text-h1 tabular">{fa ? faNum(n as number) : n}</dd><dt className="text-caption text-foreground-secondary">{l}</dt></Reveal>)}

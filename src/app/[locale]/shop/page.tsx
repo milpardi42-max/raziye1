@@ -30,7 +30,7 @@ export default async function ShopPage({ params }: { params: Promise<{ locale: L
   }));
   const usedCats = site.categories.filter((c) => site.products.some((p) => p.categoryId === c.id));
 
-  /* The eight product families every pattern is made for — the «الگو» tree in the sidebar.
+  /* The eight product families every pattern is made for — the «پترن» tree in the sidebar.
      All of them stay listed (even before the first product lands in one) so an artist's
      upload always has a real category to point at. */
   const families: FamilyOption[] = PRODUCT_FAMILIES.map((family) => {

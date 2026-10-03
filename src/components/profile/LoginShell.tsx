@@ -94,7 +94,7 @@ export function LoginShell({ locale, image, dict }: LoginShellProps) {
         <div className="auth-card__hero auth-card__hero--login">
           <Logo className="auth-card__hero-logo" />
           <h2>{fa ? "تازه‌وارد هستید؟" : "New here?"}</h2>
-          <p>{fa ? "ثبت‌نام کنید و الگوها را کشف کنید." : "Create an account and start discovering patterns."}</p>
+          <p>{fa ? "ثبت‌نام کنید و پترن‌ها را کشف کنید." : "Create an account and start discovering patterns."}</p>
           <button type="button" onClick={goToSignup} className="auth-card__hero-btn" disabled={isAutoFlow}>
             {dict.signup}
           </button>

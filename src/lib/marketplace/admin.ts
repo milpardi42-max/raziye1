@@ -52,7 +52,7 @@ export async function getReviewQueue(): Promise<ReviewQueueItem[]> {
       warnings.push({ fa: "فایل آلوده شناسایی شد", en: "File identified as infected" });
     }
     if (asset.seamless.verdict === "not-seamless") {
-      warnings.push({ fa: "الگو بی‌درز نیست", en: "Pattern is not seamless" });
+      warnings.push({ fa: "پترن بی‌درز نیست", en: "Pattern is not seamless" });
     }
     if (asset.seamless.verdict === "near-seamless") {
       warnings.push({ fa: "درزبندی تقریبی — بازبینی چشمی لازم است", en: "Near-seamless — visual check recommended" });

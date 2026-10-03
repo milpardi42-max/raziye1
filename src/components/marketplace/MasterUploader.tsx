@@ -491,7 +491,7 @@ export function MasterUploader({ onUploaded }: { onUploaded?: () => void }) {
       {/* ---------- 2. metadata ---------- */}
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label={fa ? "عنوان اثر (فارسی)" : "Title (Persian)"}>
-          <Input value={meta.titleFa} onChange={(event) => setMeta({ ...meta, titleFa: event.target.value })} placeholder="الگوی اسلیمی" />
+          <Input value={meta.titleFa} onChange={(event) => setMeta({ ...meta, titleFa: event.target.value })} placeholder="پترن اسلیمی" />
         </Field>
         <Field label={fa ? "عنوان (انگلیسی)" : "Title (English)"}>
           <Input value={meta.titleEn} onChange={(event) => setMeta({ ...meta, titleEn: event.target.value })} placeholder="Arabesque pattern" dir="ltr" />
@@ -502,7 +502,7 @@ export function MasterUploader({ onUploaded }: { onUploaded?: () => void }) {
             onChange={(event) => setMeta({ ...meta, kind: event.target.value })}
             className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm"
           >
-            <option value="pattern">{fa ? "الگو" : "Pattern"}</option>
+            <option value="pattern">{fa ? "پترن" : "Pattern"}</option>
             <option value="illustration">{fa ? "تصویرسازی" : "Illustration"}</option>
             <option value="photo">{fa ? "عکس" : "Photo"}</option>
             <option value="vector">{fa ? "وکتور" : "Vector"}</option>

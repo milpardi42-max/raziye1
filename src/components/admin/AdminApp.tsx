@@ -88,11 +88,11 @@ type Section =
 /* برچسب‌های فارسی بخش‌های صفحه اصلی */
 const SECTION_LABELS: Record<HomeSectionKey, string> = {
   hero: "هیرو (بنر اصلی)",
-  discovery: "کشف الگو",
+  discovery: "کشف پترن",
   trending: "پرطرفدارها",
   bestSellers: "پرفروش‌ترین‌ها",
-  newPatterns: "الگوهای جدید",
-  artists: "هنرمندان منتخب",
+  newPatterns: "پترن‌های جدید",
+  artists: "طراحان منتخب",
   portfolios: "پورتفولیوهای منتخب",
   styles: "کاوش بر اساس سبک",
   spaces: "کاوش بر اساس فضا",
@@ -144,7 +144,7 @@ const NAV_GROUPS: NavGroup[] = [
       { id: "buyers", label: "خریداران", icon: <ShoppingBag className="h-4 w-4" /> },
       { id: "chats", label: "گفتگوهای آنلاین", icon: <MessageCircle className="h-4 w-4" /> },
       { id: "reservations", label: "رزرو رویدادها", icon: <CalendarClock className="h-4 w-4" /> },
-      { id: "artists-signup", label: "هنرمندان / طراحان", icon: <Palette className="h-4 w-4" /> },
+      { id: "artists-signup", label: "طراحان", icon: <Palette className="h-4 w-4" /> },
     ],
   },
   {
@@ -173,7 +173,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: "جامعه",
     items: [
-      { id: "artists", label: "هنرمندان", icon: <Users className="h-4 w-4" /> },
+      { id: "artists", label: "طراحان", icon: <Users className="h-4 w-4" /> },
       { id: "portfolios", label: "پورتفولیوها", icon: <GalleryHorizontalEnd className="h-4 w-4" /> },
       { id: "education", label: "آکادمی", icon: <BookOpen className="h-4 w-4" /> },
     ],
@@ -773,7 +773,7 @@ function HeroEditor({
       {/* ── تنظیمات نمایش ── */}
       <Card
         title="تنظیمات نمایش و رفتار"
-        desc="حالت اسلایدر، پارالاکس و تعاملی‌بودن کارت الگو."
+        desc="حالت اسلایدر، پارالاکس و تعاملی‌بودن کارت پترن."
       >
         <div className="space-y-3">
           {/* slider mode */}
@@ -803,10 +803,10 @@ function HeroEditor({
         </div>
       </Card>
 
-      {/* ── الگوهای پیش‌نمایش ── */}
+      {/* ── پترن‌های پیش‌نمایش ── */}
       <Card
-        title="الگوهای پیش‌نمایش (کارت سمت راست)"
-        desc="الگوهایی که در کارت شناور سمت راست هیرو نمایش داده می‌شوند. ترتیب انتخاب اهمیت دارد."
+        title="پترن‌های پیش‌نمایش (کارت سمت راست)"
+        desc="پترن‌هایی که در کارت شناور سمت راست هیرو نمایش داده می‌شوند. ترتیب انتخاب اهمیت دارد."
       >
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {patterns.map((p) => {
@@ -858,7 +858,7 @@ function HeroEditor({
           <div className="mt-3 flex items-center gap-2 rounded-lg border border-border bg-background-secondary px-3 py-2">
             <Check className="h-3.5 w-3.5 shrink-0 text-success" />
             <p className="text-xs text-muted">
-              {hero.featuredPatternIds.length} الگو انتخاب شده — ترتیب انتخاب = ترتیب نمایش در کارت
+              {hero.featuredPatternIds.length} پترن انتخاب شده — ترتیب انتخاب = ترتیب نمایش در کارت
             </p>
           </div>
         )}
@@ -959,14 +959,14 @@ function CategoriesEditor({
   };
   const remove = (id: string) => {
     if (data.patterns.some((p) => p.categoryId === id))
-      return alert("این دسته‌بندی در الگوها استفاده می‌شود و قابل حذف نیست.");
+      return alert("این دسته‌بندی در پترن‌ها استفاده می‌شود و قابل حذف نیست.");
     update({ categories: data.categories.filter((c) => c.id !== id) });
   };
 
   return (
     <Card
       title="دسته‌بندی‌ها / سبک‌ها"
-      desc="مدیریت ساختار سبک‌شناسی که توسط الگوها، محصولات و بخش سبک‌ها استفاده می‌شود."
+      desc="مدیریت ساختار سبک‌شناسی که توسط پترن‌ها، محصولات و بخش سبک‌ها استفاده می‌شود."
       action={
         <Button size="sm" variant="outline" onClick={add}>
           <Plus className="h-4 w-4" />
@@ -1016,8 +1016,8 @@ function CategoriesEditor({
                     </p>
                   </div>
 
-                  {/* بج الگوها */}
-                  <Badge tone="outline">{patternCount} الگو</Badge>
+                  {/* بج پترن‌ها */}
+                  <Badge tone="outline">{patternCount} پترن</Badge>
 
                   {/* ترتیب */}
                   <div className="flex shrink-0 items-center gap-0.5">

@@ -197,7 +197,7 @@ export interface Asset {
   tags: string[];
   /**
    * Product family the work is made for (`lib/data/families.ts`) — chosen by the
-   * artist on upload, used by the shop's «الگو» tree.
+   * artist on upload, used by the shop's «پترن» tree.
    */
   familyId?: ID | null;
 

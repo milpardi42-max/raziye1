@@ -636,7 +636,7 @@ export function LiveDashboard({
           />
           <ContentCard
             icon={<Paintbrush className="h-4 w-4" />}
-            label="هنرمندان"
+            label="طراحان"
             total={data.artists.length}
             featured={featuredArtists}
             sub="بر اساس پروفایل‌های ثبت‌شده"
@@ -829,7 +829,7 @@ export function LiveDashboard({
           </div>
           <div className="rounded-lg bg-blue-50 p-4 text-center">
             <p className="text-2xl font-bold text-blue-700">{farsiNum(artistUsers)}</p>
-            <p className="mt-1 text-xs text-blue-600">هنرمندان ثبت‌نام شده</p>
+            <p className="mt-1 text-xs text-blue-600">طراحان ثبت‌نام شده</p>
           </div>
           <div className="rounded-lg bg-background-secondary p-4 text-center">
             <p className="text-2xl font-bold text-foreground">{farsiNum(normalUsers)}</p>

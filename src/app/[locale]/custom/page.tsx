@@ -51,7 +51,7 @@ export default async function CustomPage({ params }: { params: Promise<{ locale:
           </div>
           <div className="lg:col-span-7">
             <h2 className="font-display text-h2">{d.home.customCta}</h2>
-            <p className="mt-3 text-body text-foreground-secondary">{fa ? "الگوی سفارشی از ۴ هفته؛ شامل ۲ دور اصلاح و نمونه‌ی چاپی." : "Custom patterns from 4 weeks; includes two revision rounds and a printed sample."}</p>
+            <p className="mt-3 text-body text-foreground-secondary">{fa ? "پترن سفارشی از ۴ هفته؛ شامل ۲ دور اصلاح و نمونه‌ی چاپی." : "Custom patterns from 4 weeks; includes two revision rounds and a printed sample."}</p>
             <div className="mt-8"><InquiryForm kind="custom" options={fa ? ["کاغذ دیواری", "پارچه و منسوجات", "سرامیک", "محصول دکوراتیو", "برندینگ"] : ["Wallpaper", "Textile", "Ceramic", "Decorative product", "Branding"]} /></div>
           </div>
         </div>

@@ -744,7 +744,7 @@ export function AcademyClient({ items, categories, initialCategory, stats, itemS
             </h2>
             <p className="mx-auto mb-8 max-w-lg text-body-lg text-white/70">
               {isFA
-                ? "از مبانی طراحی الگو تا انتشار حرفه‌ای — با مدرسان تجربی یاد بگیر."
+                ? "از مبانی طراحی پترن تا انتشار حرفه‌ای — با مدرسان تجربی یاد بگیر."
                 : "From pattern design fundamentals to professional publishing — learn with experienced instructors."}
             </p>
             <div className="flex flex-wrap justify-center gap-4">

@@ -233,14 +233,14 @@ async function createPendingArtist(
       title: {
         fa: extra?.specialty?.includes("پتینه")
           ? "اجرای پتینه دکوراتیو و بافت لوکس دیوار"
-          : "طراحی الگوی اختصاصی و انحصاری پروژه",
+          : "طراحی پترن اختصاصی و انحصاری پروژه",
         en: extra?.specialty?.includes("پتینه")
           ? "Custom Decorative Patina & Wall Texture"
           : "Bespoke Architectural Pattern Design",
       },
       category: extra?.specialty?.includes("پتینه") ? ("patina" as const) : ("custom_pattern" as const),
       categoryLabel: {
-        fa: extra?.specialty?.includes("پتینه") ? "پتینه و بافت دیوار" : "طراحی الگو و پترن",
+        fa: extra?.specialty?.includes("پتینه") ? "پتینه و بافت دیوار" : "طراحی پترن و پترن",
         en: extra?.specialty?.includes("پتینه") ? "Wall Patina" : "Custom Pattern",
       },
       description: {

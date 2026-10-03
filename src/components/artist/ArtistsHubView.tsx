@@ -21,7 +21,7 @@ const disciplines: {
   en: string;
   terms: string[];
 }[] = [
-  { id: "all", fa: "همهٔ هنرمندان", en: "All artists", terms: [] },
+  { id: "all", fa: "همهٔ طراحان", en: "All designers", terms: [] },
   {
     id: "pattern",
     fa: "پترن و سطح",
@@ -33,7 +33,7 @@ const disciplines: {
       "botanical",
       "floral",
       "پترن",
-      "الگو",
+      "پترن",
       "کاغذدیواری",
     ],
   },
@@ -137,7 +137,7 @@ export function ArtistsHubView({
                 {fa ? "خانه" : "Home"}
               </Link>
               <span aria-hidden>/</span>
-              <span>{fa ? "هنرمندان" : "Artists"}</span>
+              <span>{fa ? "طراحان" : "Designers"}</span>
             </nav>
             <p className="mb-4 flex items-center gap-3 text-xs font-medium uppercase tracking-widest text-accent">
               <span className="h-px w-8 bg-accent" />

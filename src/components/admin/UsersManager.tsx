@@ -448,7 +448,7 @@ export function UsersManager() {
       ? filteredSorted.filter((u) => selected.has(u.id))
       : filteredSorted;
     if (target.length === 0) return;
-    const label = roleFilter === "artist" ? "هنرمندان و طراحان" : roleFilter === "user" ? "کاربران عادی" : "همه کاربران";
+    const label = roleFilter === "artist" ? "طراحان" : roleFilter === "user" ? "کاربران عادی" : "همه کاربران";
     printPdf(target, `لیست ${label} — رزی آتلیه`);
   };
 
@@ -584,7 +584,7 @@ export function UsersManager() {
         {[
           { label: "همه کاربران", count: countAll, icon: <Users className="h-4 w-4" />, color: "bg-slate-50 text-slate-600", filter: "all" as RoleFilter },
           { label: "کاربران عادی", count: countUser, icon: <User className="h-4 w-4" />, color: "bg-blue-50 text-blue-600", filter: "user" as RoleFilter },
-          { label: "هنرمندان/طراحان", count: countArtist, icon: <UserCheck className="h-4 w-4" />, color: "bg-purple-50 text-purple-600", filter: "artist" as RoleFilter },
+          { label: "طراحان", count: countArtist, icon: <UserCheck className="h-4 w-4" />, color: "bg-purple-50 text-purple-600", filter: "artist" as RoleFilter },
         ].map((s) => (
           <button
             key={s.filter}

@@ -208,7 +208,7 @@ export default async function PortfolioDetail({ params }: Props) {
       {p.patterns.length > 0 && (
         <section className="bg-background-secondary">
           <div className="container-x section-y">
-            <SectionHeader eyebrow={d.nav.patterns} title={locale === "fa" ? "الگوهای استفاده‌شده" : "Patterns used"} href={href(locale, "/patterns")} hrefLabel={d.nav.viewAll} />
+            <SectionHeader eyebrow={d.nav.patterns} title={locale === "fa" ? "پترن‌های استفاده‌شده" : "Patterns used"} href={href(locale, "/patterns")} hrefLabel={d.nav.viewAll} />
             <div className="mt-8 grid grid-cols-2 gap-5 md:grid-cols-4">
               {p.patterns.map((x) => <PatternCard key={x.id} pattern={enrichPattern(site, x)} />)}
             </div>

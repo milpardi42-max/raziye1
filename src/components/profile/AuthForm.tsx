@@ -7,6 +7,7 @@ import { Eye, EyeOff } from "lucide-react";
 import { useAuth, useLocale } from "@/components/providers/AppProviders";
 import { Button } from "@/components/ui/Button";
 import { Field, Input } from "@/components/ui/Input";
+import { TermsModal } from "@/components/ui/TermsModal";
 import { href } from "@/lib/utils";
 
 interface AuthFormProps {
@@ -27,6 +28,7 @@ const ERROR_MESSAGES: Record<string, { fa: string; en: string }> = {
   email_taken: { fa: "این ایمیل قبلاً ثبت شده است.", en: "This email is already registered." },
   password_too_short: { fa: "رمز عبور باید حداقل ۶ کاراکتر باشد.", en: "Password must be at least 6 characters." },
   password_mismatch: { fa: "رمز عبور و تکرار آن یکسان نیستند.", en: "Passwords do not match." },
+  terms_required: { fa: "برای تکمیل ثبت‌نام باید شرایط و مقررات را بخوانید و با آن موافقت کنید.", en: "Please read and agree to the terms & conditions to complete signup." },
   admin_not_configured: { fa: "حساب مدیر روی سرور پیکربندی نشده است.", en: "Admin account is not configured on the server." },
   too_many_attempts: { fa: "تعداد تلاش‌های زیاد. لطفاً کمی صبر کنید.", en: "Too many attempts. Please wait a moment." },
   network: { fa: "خطای شبکه. لطفاً دوباره تلاش کنید.", en: "Network error. Please try again." },
@@ -42,6 +44,8 @@ export function AuthForm({ mode, defaultRole, onSignupSuccess, prefill, autoSubm
   const [role, setRole] = useState<"user" | "artist">(defaultRole ?? "user");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [termsOpen, setTermsOpen] = useState(false);
   const fa = locale === "fa";
 
   function getError(code: string): string {
@@ -63,6 +67,13 @@ export function AuthForm({ mode, defaultRole, onSignupSuccess, prefill, autoSubm
       if (password !== confirm) {
         setBusy(false);
         return setErr(getError("password_mismatch"));
+      }
+      // Terms & conditions must be accepted before creating an account
+      if (!termsAccepted) {
+        setBusy(false);
+        setErr(getError("terms_required"));
+        setTermsOpen(true); // open the modal so the user can read and agree
+        return;
       }
     }
 
@@ -181,6 +192,32 @@ export function AuthForm({ mode, defaultRole, onSignupSuccess, prefill, autoSubm
         </Field>
       )}
 
+      {/* Terms & conditions — required on signup, with a modal to read them */}
+      {mode === "signup" && (
+        <div className="rounded-lg border border-border bg-surface p-3.5">
+          <label className="flex cursor-pointer items-start gap-2.5 text-sm leading-6 text-foreground">
+            <input
+              type="checkbox"
+              checked={termsAccepted}
+              onChange={(e) => setTermsAccepted(e.target.checked)}
+              className="mt-1 h-4 w-4 shrink-0 accent-accent"
+            />
+            <span>
+              {fa
+                ? "شرایط و مقررات سایت را (بر اساس قوانین جمهوری اسلامی ایران) خواندم و با آن موافقم."
+                : "I have read the site terms & conditions (per the laws of the Islamic Republic of Iran) and agree to them."}{" "}
+              <button
+                type="button"
+                onClick={() => setTermsOpen(true)}
+                className="font-medium text-accent underline-offset-4 hover:underline"
+              >
+                {fa ? "مشاهده متن کامل" : "Read the full text"}
+              </button>
+            </span>
+          </label>
+        </div>
+      )}
+
       {err && (
         <p role="alert" className="text-sm text-error">
           {err}
@@ -219,6 +256,19 @@ export function AuthForm({ mode, defaultRole, onSignupSuccess, prefill, autoSubm
           </>
         )}
       </p>
+
+      {mode === "signup" && (
+        <TermsModal
+          open={termsOpen}
+          onClose={() => setTermsOpen(false)}
+          locale={locale}
+          onAgree={() => {
+            setTermsAccepted(true);
+            setTermsOpen(false);
+            setErr("");
+          }}
+        />
+      )}
     </form>
   );
 }

@@ -711,7 +711,7 @@ function PortfolioCategoryManager({
       {open && (
         <div className="space-y-4 border-t border-border p-4 sm:p-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="text-xs leading-6 text-muted">این دسته‌بندی‌ها مختص نمونه‌کارها هستند و روی دسته‌بندی محصولات و الگوها تأثیری ندارند.</p>
+            <p className="text-xs leading-6 text-muted">این دسته‌بندی‌ها مختص نمونه‌کارها هستند و روی دسته‌بندی محصولات و پترن‌ها تأثیری ندارند.</p>
             <Button size="sm" variant="outline" onClick={() => { setDraft(newPortfolioCategory(categories.length + 1)); setError(""); }}>
               <Plus className="h-4 w-4" />
               دسته‌بندی جدید

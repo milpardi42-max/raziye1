@@ -123,12 +123,12 @@ export async function POST(req: Request) {
     colorways[0]?.image ||
     (b.image as string) ||
     "/images/collections/s01.jpg";
-  const title = (b.title as Pattern["title"]) ?? { fa: "الگوی جدید", en: "New pattern" };
+  const title = (b.title as Pattern["title"]) ?? { fa: "پترن جدید", en: "New pattern" };
   const pattern: Pattern = {
     id: `pat-${crypto.randomBytes(6).toString("hex")}`,
     sku: (b.sku as string) ?? `PAT-${Date.now().toString(36).toUpperCase()}`,
     slug: makeUniqueSlug((b.slug as string) || title.fa || title.en || `pattern-${Date.now().toString(36)}`, [...content.products, ...content.patterns]),
-    title: (b.title as Pattern["title"]) ?? { fa: "الگوی جدید", en: "New pattern" },
+    title: (b.title as Pattern["title"]) ?? { fa: "پترن جدید", en: "New pattern" },
     description: (b.description as Pattern["description"]) ?? { fa: "", en: "" },
     image: defaultImage,
     gallery: (b.gallery as string[]) ?? (colorways.map((c) => c.image).filter(Boolean) as string[]),

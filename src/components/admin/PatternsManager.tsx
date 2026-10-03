@@ -284,7 +284,7 @@ function StatsBar({ patterns }: { patterns: Pattern[] }) {
   const stats = [
     { label: "کل پترن‌ها", value: total, icon: <Grid3X3 className="h-4 w-4" />, color: "text-foreground bg-background-secondary" },
     { label: "رزی آتلیه", value: siteOwned, icon: <Palette className="h-4 w-4" />, color: "text-accent bg-accent/10" },
-    { label: "هنرمندان", value: artistOwned, icon: <Users className="h-4 w-4" />, color: "text-purple-700 bg-purple-50" },
+    { label: "طراحان", value: artistOwned, icon: <Users className="h-4 w-4" />, color: "text-purple-700 bg-purple-50" },
     { label: "منتخب", value: featured, icon: <Star className="h-4 w-4" />, color: "text-amber-700 bg-amber-50" },
     { label: "پرطرفدار", value: trending, icon: <TrendingUp className="h-4 w-4" />, color: "text-rose-700 bg-rose-50" },
     { label: "پرفروش", value: bestSeller, icon: <Flame className="h-4 w-4" />, color: "text-orange-700 bg-orange-50" },
@@ -427,7 +427,7 @@ export function PatternsManager({
     { id: "bestSeller", label: "پرفروش", icon: <Flame className="h-3.5 w-3.5" /> },
     { id: "isNew", label: "جدید", icon: <Sparkles className="h-3.5 w-3.5" /> },
     { id: "site", label: "رزی آتلیه", icon: <Palette className="h-3.5 w-3.5" /> },
-    { id: "artist", label: "هنرمندان", icon: <Users className="h-3.5 w-3.5" /> },
+    { id: "artist", label: "طراحان", icon: <Users className="h-3.5 w-3.5" /> },
   ];
 
   return (
@@ -442,7 +442,7 @@ export function PatternsManager({
           پترن‌ها
         </h1>
         <p className="mt-1 text-sm text-muted">
-          مدیریت همه پترن‌های سایت — رزی آتلیه، هنرمندان و کاربران
+          مدیریت همه پترن‌های سایت — رزی آتلیه، طراحان و کاربران
         </p>
       </div>
 

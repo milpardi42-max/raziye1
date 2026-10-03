@@ -17,7 +17,7 @@ export default async function FaqPage({ params }: { params: Promise<{ locale: Lo
   const d = dictionaries[locale];
   const fa = locale === "fa";
   const items = fa
-    ? [["فایل الگو با چه فرمتی تحویل می‌شود؟", "AI، PDF و TIFF با کیفیت ۳۰۰ DPI، همراه با راهنمای تکرار."], ["تفاوت لایسنس شخصی و تجاری چیست؟", "لایسنس شخصی برای استفاده در خانه‌ی خودتان است؛ تجاری برای چاپ و فروش محصول یا اجرای پروژه."], ["محصولات اختصاصی چطور ارسال می‌شوند؟", "با پست پیشتاز یا تیپاکس، ۳ تا ۵ روز کاری."], ["می‌توانم الگوی سفارشی سفارش بدهم؟", "بله؛ از صفحه‌ی تولید سفارشی درخواست بدهید."]]
+    ? [["فایل پترن با چه فرمتی تحویل می‌شود؟", "AI، PDF و TIFF با کیفیت ۳۰۰ DPI، همراه با راهنمای تکرار."], ["تفاوت لایسنس شخصی و تجاری چیست؟", "لایسنس شخصی برای استفاده در خانه‌ی خودتان است؛ تجاری برای چاپ و فروش محصول یا اجرای پروژه."], ["محصولات اختصاصی چطور ارسال می‌شوند؟", "با پست پیشتاز یا تیپاکس، ۳ تا ۵ روز کاری."], ["می‌توانم پترن سفارشی سفارش بدهم؟", "بله؛ از صفحه‌ی تولید سفارشی درخواست بدهید."]]
     : [["In what format are pattern files delivered?", "AI, PDF and TIFF at 300 DPI, with a repeat guide."], ["What is the difference between personal and commercial licenses?", "Personal is for your own home; commercial covers printing, selling products or executing projects."], ["How are exclusive products shipped?", "Express courier, 3–5 business days."], ["Can I commission a custom pattern?", "Yes — request one from the Custom Production page."]];
 
   const breadcrumb = [

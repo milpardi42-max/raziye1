@@ -1,12 +1,12 @@
 import type { Locale, Localized } from "../i18n/types";
 
 /**
- * Product families — the eight real categories a pattern (الگو) can be made for.
+ * Product families — the eight real categories a pattern (پترن) can be made for.
  *
  * This is the taxonomy the whole surface business runs on:
  *   • the artist picks one when uploading a master (`MasterUploader`),
  *   • the marketplace asset stores it (`Asset.familyId`),
- *   • the shop groups its cards by it and shows the list under «الگو» in the sidebar,
+ *   • the shop groups its cards by it and shows the list under «پترن» in the sidebar,
  *   • the admin can re-classify any product with it.
  *
  * The order is meaningful — it is the order the shop and the upload form use.
@@ -29,8 +29,8 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
   { id: "fam-wall-art", slug: "wall-art", name: { fa: "آثار هنری دیواری", en: "Wall Art" }, order: 8 },
 ];
 
-/** The parent these families hang under — «الگو» (the pattern). */
-export const FAMILY_PARENT: Localized = { fa: "الگو", en: "Pattern" };
+/** The parent these families hang under — «پترن» (the pattern). */
+export const FAMILY_PARENT: Localized = { fa: "پترن", en: "Pattern" };
 
 /** Label for products that are not classified in any family yet. */
 export const FAMILY_OTHER: Localized = { fa: "سایر محصولات", en: "Other products" };

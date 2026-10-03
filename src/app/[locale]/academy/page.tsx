@@ -184,7 +184,7 @@ export default async function AcademyPage({
     name: d.brand,
     url: `https://rosieatelier.com/${locale}/academy`,
     description: isFA
-      ? "دوره‌ها، ورکشاپ‌ها و وبینارهای آکادمی رزی برای طراحی الگو و سطح."
+      ? "دوره‌ها، ورکشاپ‌ها و وبینارهای آکادمی رزی برای طراحی پترن و سطح."
       : "Rosie Academy courses, workshops and webinars for pattern and surface design.",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -259,7 +259,7 @@ export default async function AcademyPage({
                 style={{ animationDelay: "80ms" }}
               >
                 {isFA
-                  ? "دوره‌های تخصصی طراحی الگو، ورکشاپ‌های زنده و وبینارهای حرفه‌ای — از مبانی تا عرضه بین‌المللی."
+                  ? "دوره‌های تخصصی طراحی پترن، ورکشاپ‌های زنده و وبینارهای حرفه‌ای — از مبانی تا عرضه بین‌المللی."
                   : "Specialist pattern design courses, live workshops and professional webinars — from foundations to international publishing."}
               </p>
 

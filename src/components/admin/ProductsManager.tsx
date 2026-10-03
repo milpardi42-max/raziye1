@@ -288,7 +288,7 @@ function ProductGridCard({
   );
 }
 
-/* ─── انتخاب دسته‌بندی محصول (الگو) ─── */
+/* ─── انتخاب دسته‌بندی محصول (پترن) ─── */
 function FamilyPicker({
   product,
   onChange,
@@ -444,7 +444,7 @@ function AddProductModal({
           </div>
           <div>
             <label className="mb-1 block text-xs font-medium text-foreground-secondary">
-              دسته محصول (الگو)
+              دسته محصول (پترن)
             </label>
             <select
               value={familyId}

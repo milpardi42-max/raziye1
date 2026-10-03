@@ -7,6 +7,7 @@ import { useAuth, useLocale } from "@/components/providers/AppProviders";
 import { Button } from "@/components/ui/Button";
 import { Field, Input, Select, Textarea } from "@/components/ui/Input";
 import { SuccessState } from "@/components/ui/States";
+import { TermsModal } from "@/components/ui/TermsModal";
 import { href } from "@/lib/utils";
 
 interface CreatorSignupFormProps {
@@ -22,6 +23,8 @@ export function CreatorSignupForm({ options }: CreatorSignupFormProps) {
   const [state, setState] = useState<"idle" | "loading" | "ok" | "error">("idle");
   const [errMsg, setErrMsg] = useState("");
   const [selectedPlan, setSelectedPlan] = useState<"starter" | "pro" | "studio">("pro");
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [termsOpen, setTermsOpen] = useState(false);
 
   // Already logged in as artist
   if (user?.role === "artist" || user?.role === "admin") {
@@ -67,6 +70,18 @@ export function CreatorSignupForm({ options }: CreatorSignupFormProps) {
     if (password.length < 6) {
       setState("idle");
       setErrMsg(fa ? "رمز عبور باید حداقل ۶ کاراکتر باشد." : "Password must be at least 6 characters.");
+      return;
+    }
+
+    // Terms & conditions must be accepted before creating an account
+    if (!termsAccepted) {
+      setState("idle");
+      setErrMsg(
+        fa
+          ? "برای تکمیل ثبت‌نام باید شرایط و مقررات را بخوانید و با آن موافقت کنید."
+          : "Please read and agree to the terms & conditions to complete signup.",
+      );
+      setTermsOpen(true); // open the modal so the user can read and agree
       return;
     }
 
@@ -217,7 +232,7 @@ export function CreatorSignupForm({ options }: CreatorSignupFormProps) {
           <Textarea
             name="bio"
             rows={2}
-            placeholder={fa ? "درباره سابقه کاری، تکنیک‌های پتینه، طراحی الگو یا سبک هنری خود بنویسید…" : "Describe your techniques, patina experience or design style…"}
+            placeholder={fa ? "درباره سابقه کاری، تکنیک‌های پتینه، طراحی پترن یا سبک هنری خود بنویسید…" : "Describe your techniques, patina experience or design style…"}
           />
         </Field>
         <Field label={fa ? "رمز عبور (حداقل ۶ کاراکتر)" : "Password (min 6 chars)"}>
@@ -226,6 +241,30 @@ export function CreatorSignupForm({ options }: CreatorSignupFormProps) {
         <Field label={fa ? "تکرار رمز عبور" : "Confirm password"}>
           <Input name="confirm" type="password" required dir="ltr" minLength={6} autoComplete="new-password" />
         </Field>
+      </div>
+
+      {/* Terms & conditions — required, with a modal to read them */}
+      <div className="rounded-xl border border-border bg-surface p-3.5">
+        <label className="flex cursor-pointer items-start gap-2.5 text-sm leading-6 text-foreground">
+          <input
+            type="checkbox"
+            checked={termsAccepted}
+            onChange={(e) => setTermsAccepted(e.target.checked)}
+            className="mt-1 h-4 w-4 shrink-0 accent-accent"
+          />
+          <span>
+            {fa
+              ? "شرایط و مقررات سایت را (بر اساس قوانین جمهوری اسلامی ایران) خواندم و با آن موافقم."
+              : "I have read the site terms & conditions (per the laws of the Islamic Republic of Iran) and agree to them."}{" "}
+            <button
+              type="button"
+              onClick={() => setTermsOpen(true)}
+              className="font-medium text-accent underline-offset-4 hover:underline"
+            >
+              {fa ? "مشاهده متن کامل" : "Read the full text"}
+            </button>
+          </span>
+        </label>
       </div>
 
       {state === "error" && errMsg && (
@@ -246,6 +285,17 @@ export function CreatorSignupForm({ options }: CreatorSignupFormProps) {
           </a>
         </p>
       </div>
+
+      <TermsModal
+        open={termsOpen}
+        onClose={() => setTermsOpen(false)}
+        locale={locale}
+        onAgree={() => {
+          setTermsAccepted(true);
+          setTermsOpen(false);
+          setErrMsg("");
+        }}
+      />
     </form>
   );
 }

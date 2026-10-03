@@ -83,11 +83,12 @@ export function Header({ nav }: { nav: NavData }) {
   const switchHref = pathname.replace(new RegExp(`^/${locale}`), `/${otherLocale}`) || `/${otherLocale}`;
 
   /*
-   * Primary navigation — the four sections, in the order set by the shop:
-   * آکادمی · هنرمندان · پورتفولیو · فروشگاه
-   * الگوها و فایل دیجیتال از داخل پنل فروشگاه و فوتر در دسترس می‌مانند.
+   * Primary navigation — home first, then the four sections in the order set by the shop:
+   * خانه · آکادمی · طراحان · پورتفولیو · فروشگاه
+   * پترن‌ها و فایل دیجیتال از داخل پنل فروشگاه و فوتر در دسترس می‌مانند.
    */
-  const links: { key: string; label: string; href: string; panel?: Panel }[] = [
+  const links: { key: string; label: string; href: string; panel?: Panel; home?: boolean }[] = [
+    { key: "home", label: dict.nav.home, href: href(locale, "/"), home: true },
     { key: "academy", label: dict.nav.education, href: href(locale, "/academy") },
     { key: "artists", label: dict.nav.artists, href: href(locale, "/artists") },
     { key: "portfolio", label: dict.nav.portfolio, href: href(locale, "/portfolio") },
@@ -121,7 +122,7 @@ export function Header({ nav }: { nav: NavData }) {
           {/* Desktop nav */}
           <nav aria-label="Primary" className="hidden lg:flex items-center gap-1">
             {links.map((l) => {
-              const active = pathname.startsWith(l.href);
+              const active = l.home ? isHome : pathname.startsWith(l.href);
               return (
                 <div key={l.key} onMouseEnter={() => (l.panel ? openPanel(l.panel) : scheduleClose())} className="relative">
                   <Link

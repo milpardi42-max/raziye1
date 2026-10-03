@@ -36,7 +36,7 @@ export default async function JoinPage({ params }: { params: Promise<{ locale: L
     {
       icon: Palette,
       t: fa ? "فروش پترن و لایسنس دیجیتال" : "Digital Pattern Licensing",
-      s: fa ? "کسب درآمد مستمر ماهانه از فروش الگوها در مارکت‌پلیس." : "Earn monthly recurring revenue from pattern sales.",
+      s: fa ? "کسب درآمد مستمر ماهانه از فروش پترن‌ها در مارکت‌پلیس." : "Earn monthly recurring revenue from pattern sales.",
     },
     {
       icon: ShieldCheck,
@@ -55,7 +55,7 @@ export default async function JoinPage({ params }: { params: Promise<{ locale: L
 
   const options = fa
     ? [
-        "طراحی پترن و الگوهای سطح (Surface Designer)",
+        "طراحی پترن و پترن‌های سطح (Surface Designer)",
         "هنرمند و مجری پتینه و بافت دیوار (Patina & Wall Finishes)",
         "تصویرگر و چاپ پارچه (Illustrator & Textile)",
         "نقاشی لوکس و اسلیمی معاصر (Luxury Ornament)",

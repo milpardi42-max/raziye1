@@ -42,7 +42,7 @@ const PILLARS = [
   },
   {
     icon: Download,
-    fa: { title: "پیش‌نمایش بی‌درز", text: "کاشی تکرارشونده، ماکاپ حرفه‌ای و اعلام خودکار درزبندی الگو." },
+    fa: { title: "پیش‌نمایش بی‌درز", text: "کاشی تکرارشونده، ماکاپ حرفه‌ای و اعلام خودکار درزبندی پترن." },
     en: { title: "Seamless previews", text: "Repeat tiles, professional mockups and automatic seam detection." },
   },
 ];
@@ -80,7 +80,7 @@ export default async function MarketplacePage({
   const stats = [
     { value: assets.length, fa: "اثر موجود", en: "works available" },
     { value: assets.reduce((sum, asset) => sum + asset.stats.sales, 0), fa: "فروش موفق", en: "completed sales" },
-    { value: assets.filter((asset) => asset.seamless.verdict === "seamless").length, fa: "الگوی بی‌درز", en: "seamless patterns" },
+    { value: assets.filter((asset) => asset.seamless.verdict === "seamless").length, fa: "پترن بی‌درز", en: "seamless patterns" },
     { value: SUBSCRIPTION_PLANS.length, fa: "پلن اشتراک", en: "download passes" },
   ];
 
@@ -99,7 +99,7 @@ export default async function MarketplacePage({
         </h1>
         <p className="anim-blur-in mt-4 max-w-xl text-body-lg text-foreground-secondary" style={{ animationDelay: "140ms" }}>
           {fa
-            ? "الگو، تصویرسازی و وکتور — با فایل مادر خصوصی، پیش‌نمایش واترمارک‌شده، گواهی لایسنس PDF و امکان خرید انحصاری."
+            ? "پترن، تصویرسازی و وکتور — با فایل مادر خصوصی، پیش‌نمایش واترمارک‌شده، گواهی لایسنس PDF و امکان خرید انحصاری."
             : "Patterns, illustrations and vectors — private master files, watermarked previews, PDF license certificates and exclusive purchases."}
         </p>
 

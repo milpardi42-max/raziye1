@@ -560,7 +560,7 @@ function StatsBar({ rows }: { rows: ArtistRow[] }) {
   const rejected = rows.filter((r) => r.status === "rejected").length;
 
   const stats = [
-    { label: "کل هنرمندان", value: total, icon: <Users className="h-4 w-4" />, bg: "bg-purple-50", color: "text-purple-700" },
+    { label: "کل طراحان", value: total, icon: <Users className="h-4 w-4" />, bg: "bg-purple-50", color: "text-purple-700" },
     { label: "در انتظار تأیید", value: pending, icon: <Clock className="h-4 w-4" />, bg: "bg-amber-50", color: "text-amber-700" },
     { label: "تأیید شده", value: approved, icon: <CheckCircle2 className="h-4 w-4" />, bg: "bg-emerald-50", color: "text-emerald-700" },
     { label: "رد شده", value: rejected, icon: <XCircle className="h-4 w-4" />, bg: "bg-rose-50", color: "text-rose-700" },
@@ -745,7 +745,7 @@ export function ArtistsSignupManager() {
             <Sparkles className="h-5 w-5" />
           </div>
           <div>
-            <h1 className="text-base font-bold text-gray-900">مدیریت ثبت‌نام هنرمندان</h1>
+            <h1 className="text-base font-bold text-gray-900">مدیریت ثبت‌نام طراحان</h1>
             <p className="text-xs text-gray-400">
               {loading
                 ? "در حال بارگذاری…"
@@ -763,7 +763,7 @@ export function ArtistsSignupManager() {
             بارگذاری
           </button>
           <button
-            onClick={() => exportPDF(sorted, "لیست هنرمندان")}
+            onClick={() => exportPDF(sorted, "لیست طراحان")}
             disabled={sorted.length === 0}
             className="flex h-8 items-center gap-1.5 rounded-lg bg-purple-600 px-3 text-xs font-semibold text-white hover:bg-purple-700 disabled:opacity-40"
           >

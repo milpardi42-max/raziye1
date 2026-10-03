@@ -13,12 +13,12 @@ type Group = "patterns" | "products" | "artists" | "portfolio" | "education" | "
 export function MegaMenu({ nav, onNavigate }: { nav: NavData; onNavigate: () => void }) {
   const { locale, dict } = useLocale();
   const groups: { id: Group; label: string; href: string; preview: string; desc: string }[] = [
-    { id: "patterns", label: dict.nav.patterns, href: "/patterns", preview: nav.patterns[0]?.image ?? "", desc: locale === "fa" ? "کتابخانه‌ی الگوهای اورجینال" : "The original pattern library" },
+    { id: "patterns", label: dict.nav.patterns, href: "/patterns", preview: nav.patterns[0]?.image ?? "", desc: locale === "fa" ? "کتابخانه‌ی پترن‌های اورجینال" : "The original pattern library" },
     { id: "categories", label: dict.nav.styles, href: "/styles", preview: nav.categories[1]?.image ?? "", desc: locale === "fa" ? "کاوش بر اساس سبک" : "Browse by style" },
     { id: "collections", label: dict.nav.collections, href: "/collections", preview: nav.collections[0]?.cover ?? "", desc: locale === "fa" ? "گزیده‌های ویراسته" : "Curated selections" },
-    { id: "artists", label: dict.nav.artists, href: "/artists", preview: nav.artists[0]?.avatar ?? "", desc: locale === "fa" ? "آدم‌های پشت الگوها" : "The people behind the patterns" },
+    { id: "artists", label: dict.nav.artists, href: "/artists", preview: nav.artists[0]?.avatar ?? "", desc: locale === "fa" ? "آدم‌های پشت پترن‌ها" : "The people behind the patterns" },
     { id: "portfolio", label: dict.nav.portfolio, href: "/portfolio", preview: nav.portfolios[0]?.cover ?? "", desc: locale === "fa" ? "گالری پروژه‌ها" : "Project gallery" },
-    { id: "education", label: dict.nav.education, href: "/academy", preview: nav.education[0]?.image ?? "", desc: locale === "fa" ? "یادگیری طراحی الگو" : "Learn pattern design" },
+    { id: "education", label: dict.nav.education, href: "/academy", preview: nav.education[0]?.image ?? "", desc: locale === "fa" ? "یادگیری طراحی پترن" : "Learn pattern design" },
     { id: "products", label: dict.nav.products, href: "/shop", preview: nav.storeProducts[0]?.colors[0]?.image ?? "", desc: locale === "fa" ? "کالکشن اختصاصی و محصولات" : "Exclusive collection & products" },
   ];
   const [hover, setHover] = useState<Group>("patterns");

@@ -17,9 +17,9 @@ export async function generateMetadata({
   return {
     title: `${d.nav.artists} | ${d.brand}`,
     description:
-      locale === "fa"
-        ? "کشف هنرمندان رزی آتلیه؛ معرفی، نمونه‌کارها و صفحهٔ اختصاصی طراحان و هنرمندان."
-        : "Meet the artists of Rosie Atelier. Explore their profiles, portfolios and creative practice.",
+        locale === "fa"
+          ? "کشف طراحان رزی آتلیه؛ معرفی، نمونه‌کارها و صفحهٔ اختصاصی هر طراح."
+          : "Meet the designers of Rosie Atelier. Explore their profiles, portfolios and creative practice.",
     alternates: { canonical: `/${locale}/artists` },
   };
 }
