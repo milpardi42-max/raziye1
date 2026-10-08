@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
     // Nothing on this site renders wider than 2×1920; capping the list trims ~40% off each <img>.
     deviceSizes: [640, 750, 1080, 1200, 1920, 2560, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // The site's <Image quality={…}> values (85/90/95/100) plus the 75 default.
+    // Next 16 requires an explicit allow-list here; declaring it now keeps the
+    // optimiser happy and silences the deprecation warning on every render.
+    qualities: [75, 85, 90, 95, 100],
   },
 };
 
