@@ -47,8 +47,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 
-const themeScript = `(function(){try{var t=localStorage.getItem('ra-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();`;
-
+/**
+ * This layout renders no <head>: the theme bootstrap script and the font
+ * preloads now live in the single document head owned by src/app/layout.tsx,
+ * which picks the right locale (and therefore the right fonts) from the
+ * `x-ra-locale` request header set in src/middleware.ts.
+ */
 export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { locale: raw } = await params;
   if (!LOCALES.includes(raw as Locale)) notFound();
@@ -57,18 +61,6 @@ export default async function LocaleLayout({ children, params }: { children: Rea
 
   return (
     <>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} suppressHydrationWarning />
-        {/* preload only the fonts this locale actually renders first */}
-        {locale === "fa" ? (
-          <>
-            <link rel="preload" href="/fonts/iransanse-web/IRANSansWeb.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-            <link rel="preload" href="/fonts/lalezar/Lalezar-arabic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-          </>
-        ) : (
-          <link rel="preload" href="/fonts/instrument-serif/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        )}
-      </head>
       <AppProviders locale={locale}>
         <LocaleChrome
           before={

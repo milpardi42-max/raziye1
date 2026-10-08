@@ -16,6 +16,15 @@ npm run check    # typecheck + lint
 npm run build && npm start
 ```
 
+While the server is running, `npm run check:document` re-reads the served HTML of the
+main routes and fails if the document skeleton is wrong (more than one `<html>`,
+`<head>` or `<body>`, or a document tag nested inside `<body>`). That nesting is what
+produces React's *"A tree hydrated but some attributes of the server rendered HTML
+didn't match"* error — browsers re-parse such a stream before React hydrates it.
+Only `src/app/layout.tsx` may render the document; nested layouts receive the locale
+and section through request headers set in `src/middleware.ts`
+(guarded by `tests/document-structure.test.mjs`).
+
 `npm run dev` auto-detects WebContainer environments (StackBlitz, Bolt.new) and applies the async-context mitigation required by Next.js 15.5.x there — see [STACKBLITZ.md](STACKBLITZ.md). Ordinary machines run plain `next dev` with no changes.
 
 ## StackBlitz preview

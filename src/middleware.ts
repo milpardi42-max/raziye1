@@ -8,6 +8,26 @@ function isOwnerEmail(email: string): boolean {
   return email.toLowerCase() === ownerEmail;
 }
 
+/**
+ * Hand the resolved locale/section to the one root layout.
+ *
+ * src/app/layout.tsx renders the document (<html lang dir>, <head>, <body>) and
+ * therefore sets the direction and section styling for every route — but a root
+ * layout sits above the [locale] segment and never receives its params. These
+ * request headers bridge that gap (there is no other supported way to read the
+ * active pathname from a root layout).
+ */
+function nextWithDocumentHints(
+  req: NextRequest,
+  hints: { locale?: string; section?: "admin" },
+): NextResponse {
+  const requestHeaders = new Headers(req.headers);
+  if (hints.locale) requestHeaders.set("x-ra-locale", hints.locale);
+  if (hints.section) requestHeaders.set("x-ra-section", hints.section);
+  else requestHeaders.delete("x-ra-section");
+  return NextResponse.next({ request: { headers: requestHeaders } });
+}
+
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
@@ -15,21 +35,22 @@ export async function middleware(req: NextRequest) {
   // این مسیرها از layout سایت جدا هستند
   const adminMatch = pathname.match(/^\/admin\/([^/]+)(\/.*)?$/);
   if (adminMatch) {
+    const locale = adminMatch[1];
+    const hints = { locale, section: "admin" as const };
     const rest = adminMatch[2] ?? "";
 
     // صفحه لاگین ادمین نیازی به بررسی نشست ندارد
-    if (rest === "/login" || rest === "/login/") return NextResponse.next();
+    if (rest === "/login" || rest === "/login/") return nextWithDocumentHints(req, hints);
 
     // بقیه مسیرهای ادمین نیاز به نقش admin دارند
     const sessionToken = req.cookies.get(SESSION_COOKIE)?.value;
     const session = await readSessionToken(sessionToken);
     if (!session || session.role !== "admin") {
-      const locale = adminMatch[1];
       const loginUrl = req.nextUrl.clone();
       loginUrl.pathname = `/admin/${locale}/login`;
       return NextResponse.redirect(loginUrl);
     }
-    return NextResponse.next();
+    return nextWithDocumentHints(req, hints);
   }
 
   /* -------- i18n locale prefix (برای مسیرهای سایت اصلی) -------- */
@@ -44,7 +65,9 @@ export async function middleware(req: NextRequest) {
 
   /* -------- Protected routes (سایت اصلی) -------- */
   const segments = pathname.split("/").filter(Boolean);
+  const locale = segments[0];
   const rest = segments.slice(1).join("/");
+  const hints = { locale };
 
   const sessionToken = req.cookies.get(SESSION_COOKIE)?.value;
   const session = await readSessionToken(sessionToken);
@@ -79,7 +102,7 @@ export async function middleware(req: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  return nextWithDocumentHints(req, hints);
 }
 
 export const config = {
